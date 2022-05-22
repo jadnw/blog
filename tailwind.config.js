@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: [
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -5,7 +7,19 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: '#ffffff',
+      black: '#000000',
+      ink: colors.zinc,
+    },
+    extend: {
+      spacing: {
+        wrapper: '1024px',
+        content: '768px',
+      },
+    },
   },
   plugins: [],
 }
