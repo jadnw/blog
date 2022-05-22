@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import Header from './Header'
+
 interface LayoutProps {
   title?: string
   description?: string
@@ -9,13 +11,18 @@ interface LayoutProps {
 const DEFAULT_TITLE = 'Jaden Wu'
 const DEFAULT_DESC = 'Blog'
 
-const Layout = ({ title = DEFAULT_TITLE, description = DEFAULT_DESC, children }: LayoutProps) => (
+const Layout = ({
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESC,
+  children,
+}: LayoutProps) => (
   <>
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
+    <Header />
     <main>{children}</main>
   </>
 )

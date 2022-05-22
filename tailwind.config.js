@@ -7,6 +7,11 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      heading: ['Josefin Sans', 'sans-serif'],
+      sans: ['Vazirmatn', 'sans-serif'],
+      mono: ['JetBrains Mono', 'monospace'],
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
