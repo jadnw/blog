@@ -22,3 +22,9 @@ export const formatDate = (dateStr: string): string => {
     date.getFullYear()
   )
 }
+
+export const ITEMS_PER_PAGE = 1
+
+export const getItemsByPage = (items: any[], page = 1) => {
+  return items.slice(ITEMS_PER_PAGE * (page - 1), ITEMS_PER_PAGE * page)
+}

@@ -20,7 +20,6 @@ const SOURCES = {
   post: path.join(ROOT, '_posts'),
   note: path.join(ROOT, '_notes'),
 }
-const ITEMS_PER_PAGE = 6
 
 export const dateSortDesc = (a: any, b: any) => {
   if (a > b) return -1
