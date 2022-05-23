@@ -22,7 +22,7 @@ const SOURCES = {
   note: path.join(ROOT, '_notes'),
 }
 
-export const dateSortDesc = (a: any, b: any) => {
+const sortDesc = (a: any, b: any) => {
   if (a > b) return -1
   if (a < b) return 1
   return 0
@@ -127,7 +127,7 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
   const directory = SOURCES[type]
   const paths = getMdxFiles(directory)
 
-  const frontmatters = paths.reduce((result: MDXFrontmatter[], filePath) => {
+  let frontmatters = paths.reduce((result: MDXFrontmatter[], filePath) => {
     const source = fs.readFileSync(filePath, 'utf8')
     const { data: frontmatter, content } = matter(source)
     const fm = {
@@ -146,6 +146,8 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
 
     return result
   }, [])
+
+  frontmatters = frontmatters.sort((pfm, nfm) => sortDesc(pfm.date, nfm.date))
 
   const totalPages = Math.ceil(frontmatters.length / ITEMS_PER_PAGE)
 
