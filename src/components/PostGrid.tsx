@@ -6,7 +6,7 @@ interface PostGridProps {
 }
 
 const PostGrid = ({ frontmatters }: PostGridProps) => (
-  <div>
+  <div className="flex flex-col items-stretch divide-y divide-ink-200">
     {frontmatters.map((frontmatter) => (
       <PostCard key={frontmatter.slug} frontmatter={frontmatter} />
     ))}

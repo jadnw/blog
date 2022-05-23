@@ -6,6 +6,7 @@ import Typography from '@/components/Typography'
 
 import Decor from '@/assets/svgr/decor.svg'
 import { getMdxFrontmatters } from '@/lib/mdx'
+import PostGrid from '@/components/PostGrid'
 
 export const getStaticProps: GetStaticProps = async () => {
   const postFrontmatters = await getMdxFrontmatters()
@@ -20,7 +21,6 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: NextPage = ({
   latestFrontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(latestFrontmatters)
   return (
     <Layout>
       <div className="mx-auto py-24 w-wrapper">
@@ -73,6 +73,7 @@ const Home: NextPage = ({
         </section>
         <section>
           <Typography text="Latest Posts" />
+          <PostGrid frontmatters={latestFrontmatters} />
         </section>
       </div>
     </Layout>
