@@ -5,7 +5,7 @@ import Moon from '../assets/svgr/moon.svg'
 import NavLink from './NavLink'
 
 const Header = () => (
-  <header className="text-ink-700">
+  <header className="text-ink-600">
     <div className="mx-auto py-8 w-wrapper flex items-center justify-between">
       <Link href="/">
         <a className="flex items-center space-x-4 font-heading font-extrabold text-3xl">
@@ -27,7 +27,7 @@ const Header = () => (
           <li>
             <NavLink href="/about">About</NavLink>
           </li>
-          <button>
+          <button className="px-4 py-1">
             <Moon className="w-5 h-5" />
           </button>
         </ul>

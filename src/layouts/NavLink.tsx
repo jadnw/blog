@@ -13,7 +13,7 @@ const NavLink = ({ href, exact = false, children }: NavLinkProps) => {
 
   return (
     <Link href={href}>
-      <a className="p-4">{children}</a>
+      <a className="px-4 py-1">{children}</a>
     </Link>
   )
 }
