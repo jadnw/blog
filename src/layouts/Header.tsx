@@ -8,7 +8,7 @@ const Header = () => (
   <header className="text-ink-700">
     <div className="mx-auto py-8 w-wrapper flex items-center justify-between">
       <Link href="/">
-        <a className="flex items-center space-x-4 font-heading font-bold text-3xl">
+        <a className="flex items-center space-x-4 font-heading font-extrabold text-3xl">
           <Logo className="w-10 h-10" />
           <span>Jaden.Wu</span>
         </a>
