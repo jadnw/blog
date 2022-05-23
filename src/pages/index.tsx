@@ -3,14 +3,16 @@ import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Layout from '@/layouts/Layout'
 import Button from '@/components/Button'
 import Typography from '@/components/Typography'
+import Grid from '@/components/Grid'
 
 import Decor from '@/assets/svgr/decor.svg'
 import { getMdxFrontmatters } from '@/lib/mdx'
-import PostGrid from '@/components/PostGrid'
+import { getItemsByPage } from '@/lib/utils'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const postFrontmatters = await getMdxFrontmatters()
-  const latestFrontmatters = postFrontmatters.slice(0, 6)
+  const { frontmatters } = await getMdxFrontmatters()
+  const latestFrontmatters = getItemsByPage(frontmatters, 1)
+
   return {
     props: {
       latestFrontmatters,
@@ -85,7 +87,7 @@ const Home: NextPage = ({
         </section>
         <section className="pt-16 flex flex-col items-stretch">
           <Typography text="Latest Posts" />
-          <PostGrid frontmatters={latestFrontmatters} />
+          <Grid frontmatters={latestFrontmatters} />
           <div className="self-center">
             <Button text="Read More Posts" href="/blog" />
           </div>
