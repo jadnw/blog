@@ -6,6 +6,7 @@ import type {
 } from 'next'
 
 import Layout from '@/layouts/Layout'
+import Pagination from '@/components/Pagination'
 import PostGrid from '@/components/PostGrid'
 import SearchField from '@/components/SearchField'
 import Typography from '@/components/Typography'
@@ -51,6 +52,11 @@ const Blog: NextPage = ({
         />
       </Typography>
       <PostGrid frontmatters={frontmatters} />
+      <Pagination
+        page={page}
+        totalPages={totalPages}
+        hasNextPage={hasNextPage}
+      />
     </section>
   </Layout>
 )
