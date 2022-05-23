@@ -36,7 +36,7 @@ const Home: NextPage = ({
           </p>
           <div className="flex items-center space-x-4">
             <Button text="Subscribe Me" href="/#subscribe" />
-            <Decor />
+            <Decor className="text-primary-300 dark:text-primary-500" />
           </div>
         </section>
         <section className="mt-12 flex flex-col items-start">
