@@ -133,7 +133,7 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
     const fm = {
       slug: getSlugFromPath(filePath),
       title: frontmatter.title,
-      image: frontmatter.image,
+      image: frontmatter.image ?? null,
       date: frontmatter.date.toString(),
       tags: frontmatter.tags,
       summary: frontmatter.summary,
