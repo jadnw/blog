@@ -4,9 +4,10 @@ export interface TocHeading {
   depth: number
 }
 
-export interface MDXFrontMatter {
+export interface MDXFrontmatter {
   slug: string
   title: string
+  image?: string
   date: string
   tags: string[]
   summary: string
@@ -15,6 +16,6 @@ export interface MDXFrontMatter {
 
 export interface MDXPost {
   toc: TocHeading[]
-  frontmatter: MDXFrontMatter
+  frontmatter: MDXFrontmatter
   body: string
 }

@@ -13,7 +13,7 @@ import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
-import type { TocHeading, MDXFrontMatter, MDXPost } from '../types'
+import type { TocHeading, MDXFrontmatter, MDXPost } from '../types'
 
 const ROOT = process.cwd()
 const SOURCES = {
@@ -112,6 +112,7 @@ export const getFileBySlug = async (
     frontmatter: {
       slug: slug,
       title: frontmatter.title,
+      image: frontmatter.image,
       date: frontmatter.date.toString(),
       tags: frontmatter.tags,
       summary: frontmatter.summary,
@@ -125,12 +126,13 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
   const directory = SOURCES[type]
   const paths = getMdxFiles(directory)
 
-  return paths.reduce((frontmatters: MDXFrontMatter[], filePath) => {
+  return paths.reduce((frontmatters: MDXFrontmatter[], filePath) => {
     const source = fs.readFileSync(filePath, 'utf8')
     const { data: frontmatter, content } = matter(source)
     const fm = {
       slug: getSlugFromPath(filePath),
       title: frontmatter.title,
+      image: frontmatter.image,
       date: frontmatter.date.toString(),
       tags: frontmatter.tags,
       summary: frontmatter.summary,

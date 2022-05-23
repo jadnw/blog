@@ -1,12 +1,26 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 
 import Layout from '@/layouts/Layout'
 import Button from '@/components/Button'
 import Typography from '@/components/Typography'
 
 import Decor from '@/assets/svgr/decor.svg'
+import { getMdxFrontmatters } from '@/lib/mdx'
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const postFrontmatters = await getMdxFrontmatters()
+  const latestFrontmatters = postFrontmatters.slice(0, 6)
+  return {
+    props: {
+      latestFrontmatters,
+    },
+  }
+}
+
+const Home: NextPage = ({
+  latestFrontmatters,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(latestFrontmatters)
   return (
     <Layout>
       <div className="mx-auto py-24 w-wrapper">
