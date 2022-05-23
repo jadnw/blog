@@ -44,15 +44,22 @@ const Home: NextPage = ({
             &nbsp;
           </span>
           <pre className="py-12 font-mono font-medium text-ink-700 dark:text-ink-200">
-            <span className="text-indigo-500">const</span> quote ={' '}
+            <span className="text-purple-500 dark:text-purple-400">const</span>{' '}
+            quote ={' '}
             <span className="text-green-500">
               &apos;It is not enough for code to work&apos;
             </span>
             <br />
-            <span className="text-indigo-500">const</span> author ={' '}
+            <span className="text-purple-500 dark:text-purple-400">
+              const
+            </span>{' '}
+            author ={' '}
             <span className="text-green-500">&apos;Robert C. Martin&apos;</span>
             <br />
-            <span className="text-indigo-500">const</span> book ={' '}
+            <span className="text-purple-500 dark:text-purple-400">
+              const
+            </span>{' '}
+            book ={' '}
             <span className="text-green-500">&apos;Clean Code&apos;</span>
             <br />
             <br />
@@ -64,7 +71,8 @@ const Home: NextPage = ({
               : Use literal string in this case. Best practice?
             </span>
             <br />
-            console.log(`”$&#123;quote&#125;” -- by $$&#123;author&#125; on
+            console.<span className="text-blue-600">log</span>
+            (`”$&#123;quote&#125;” -- by $$&#123;author&#125; on
             $$&#123;book&#125;.`)
             <br />
             <br />

@@ -31,8 +31,9 @@ module.exports = {
         900: '#0c0f10',
       },
       primary: colors.cyan,
-      indigo: colors.indigo,
+      purple: colors.violet,
       green: colors.emerald,
+      blue: colors.sky,
       yellow: colors.yellow,
     },
     extend: {
