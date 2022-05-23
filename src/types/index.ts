@@ -20,9 +20,10 @@ export interface MDXPost {
   body: string
 }
 
-export interface FrontmattersWithPagination {
-  page: number
-  totalPages: number
-  hasNextPage: boolean
+export interface PaginatedFrontmatters {
+  pagination: {
+    page: number
+    totalPages: number
+  }
   frontmatters: MDXFrontmatter[]
 }

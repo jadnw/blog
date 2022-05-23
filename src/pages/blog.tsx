@@ -2,30 +2,27 @@ import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 
 import BlogLayout from '@/layouts/BlogLayout'
 
-import { getMdxFrontmattersWithPagination } from '@/lib/mdx'
+import { getMdxFrontmatters } from '@/lib/mdx'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getMdxFrontmattersWithPagination()
+  const data = await getMdxFrontmatters()
 
   return {
     props: {
-      ...data,
+      pagination: {
+        page: 1,
+        totalPages: data.totalPages,
+      },
+      frontmatters: data.frontmatters,
     },
   }
 }
 
 const Blog: NextPage = ({
-  page,
-  totalPages,
-  hasNextPage,
+  pagination,
   frontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <BlogLayout
-    page={page}
-    totalPages={totalPages}
-    hasNextPage={hasNextPage}
-    frontmatters={frontmatters}
-  />
+  <BlogLayout pagination={pagination} frontmatters={frontmatters} />
 )
 
 export default Blog

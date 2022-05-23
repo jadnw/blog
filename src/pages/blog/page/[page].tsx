@@ -7,10 +7,10 @@ import type {
 
 import BlogLayout from '@/layouts/BlogLayout'
 
-import { getTotalPages, getMdxFrontmattersWithPagination } from '@/lib/mdx'
+import { getMdxFrontmatters } from '@/lib/mdx'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const totalPages = await getTotalPages()
+  const { totalPages } = await getMdxFrontmatters()
 
   return {
     paths: Array.from({ length: totalPages })
@@ -21,29 +21,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const data = await getMdxFrontmattersWithPagination(
-    context.params!.page as string,
-  )
+  const data = await getMdxFrontmatters()
 
   return {
     props: {
-      ...data,
+      pagination: {
+        page: context.params!.page,
+        totalPages: data.totalPages,
+      },
+      frontmatters: data.frontmatters,
     },
   }
 }
 
 const BlogWithPagination: NextPage = ({
-  page,
-  totalPages,
-  hasNextPage,
+  pagination,
   frontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <BlogLayout
-    page={page}
-    totalPages={totalPages}
-    hasNextPage={hasNextPage}
-    frontmatters={frontmatters}
-  />
+  <BlogLayout pagination={pagination} frontmatters={frontmatters} />
 )
 
 export default BlogWithPagination

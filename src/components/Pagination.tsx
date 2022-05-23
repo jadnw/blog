@@ -2,16 +2,15 @@ import Link from 'next/link'
 
 interface PaginationProps {
   route?: 'blog' | 'notes'
-  page: number
-  totalPages: number
-  hasNextPage: boolean
+  pagination: {
+    page: number
+    totalPages: number
+  }
 }
 
 const Pagination = ({
   route = 'blog',
-  page,
-  totalPages,
-  hasNextPage,
+  pagination: { page, totalPages },
 }: PaginationProps) => {
   return (
     <div className="flex items-center justify-between text-sm font-semibold">
@@ -29,10 +28,10 @@ const Pagination = ({
       <span>
         Page {page} of {totalPages}
       </span>
-      <Link href={`/${route}/page/${hasNextPage ? page + 1 : page}`}>
+      <Link href={`/${route}/page/${page < totalPages ? page + 1 : page}`}>
         <a
           className={`${
-            hasNextPage
+            page < totalPages
               ? 'text-primary-500'
               : 'text-ink-400 line-through pointer-events-none'
           }`}

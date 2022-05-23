@@ -127,7 +127,7 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
   const directory = SOURCES[type]
   const paths = getMdxFiles(directory)
 
-  return paths.reduce((frontmatters: MDXFrontmatter[], filePath) => {
+  const frontmatters = paths.reduce((result: MDXFrontmatter[], filePath) => {
     const source = fs.readFileSync(filePath, 'utf8')
     const { data: frontmatter, content } = matter(source)
     const fm = {
@@ -141,38 +141,16 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
     }
 
     if (!frontmatter.draft) {
-      return [...frontmatters, fm]
+      return [...result, fm]
     }
 
-    return frontmatters
+    return result
   }, [])
-}
 
-export const getTotalPages = async (
-  type: 'post' | 'note' = 'post',
-): Promise<number> => {
-  const frontmatters = await getMdxFrontmatters(type)
-  return Math.ceil(frontmatters.length / ITEMS_PER_PAGE)
-}
-
-export const getMdxFrontmattersWithPagination = async (
-  page: string | number = 1,
-  type: 'post' | 'note' = 'post',
-) => {
-  let frontmatters = await getMdxFrontmatters(type)
-  page = +page
   const totalPages = Math.ceil(frontmatters.length / ITEMS_PER_PAGE)
-  const hasNextPage = page > 0 && page < totalPages
-
-  frontmatters = frontmatters.slice(
-    ITEMS_PER_PAGE * (page - 1),
-    ITEMS_PER_PAGE * page,
-  )
 
   return {
-    page,
     totalPages,
-    hasNextPage,
     frontmatters,
   }
 }

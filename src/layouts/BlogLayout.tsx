@@ -4,16 +4,11 @@ import PostGrid from '@/components/PostGrid'
 import SearchField from '@/components/SearchField'
 import Typography from '@/components/Typography'
 
-import type { FrontmattersWithPagination } from '../types'
+import type { PaginatedFrontmatters } from '../types'
 
-type BlogLayoutProps = FrontmattersWithPagination
+type BlogLayoutProps = PaginatedFrontmatters
 
-const BlogLayout = ({
-  page,
-  totalPages,
-  hasNextPage,
-  frontmatters,
-}: BlogLayoutProps) => (
+const BlogLayout = ({ pagination, frontmatters }: BlogLayoutProps) => (
   <Layout title="Blog | Jaden Wu">
     <section className="mx-auto py-12 w-wrapper">
       <Typography text="Blog">
@@ -24,11 +19,7 @@ const BlogLayout = ({
         />
       </Typography>
       <PostGrid frontmatters={frontmatters} />
-      <Pagination
-        page={page}
-        totalPages={totalPages}
-        hasNextPage={hasNextPage}
-      />
+      <Pagination pagination={pagination} />
     </section>
   </Layout>
 )
