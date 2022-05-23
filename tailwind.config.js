@@ -8,8 +8,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      heading: ['Josefin Sans', 'sans-serif'],
-      sans: ['Vazirmatn', 'sans-serif'],
+      heading: ['Glory', 'sans-serif'],
+      sans: ['Roboto Flex', 'sans-serif'],
       mono: ['JetBrains Mono', 'monospace'],
     },
     colors: {
