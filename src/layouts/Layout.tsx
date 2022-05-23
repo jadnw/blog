@@ -24,7 +24,7 @@ const Layout = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header />
-    <main className="text-ink-700 bg-white">{children}</main>
+    <main className="text-ink-600 bg-white text-lg">{children}</main>
     <Footer />
   </>
 )
