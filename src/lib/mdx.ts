@@ -14,6 +14,7 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 import type { TocHeading, MDXFrontmatter, MDXPost } from '../types'
+import { ITEMS_PER_PAGE } from '@/lib/config'
 
 const ROOT = process.cwd()
 const SOURCES = {
