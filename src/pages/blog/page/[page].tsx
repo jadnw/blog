@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       pagination: {
-        page: context.params!.page,
+        page: Number(context.params!.page),
         totalPages: data.totalPages,
       },
       frontmatters: data.frontmatters,
