@@ -7,9 +7,9 @@ interface SearchFieldProps {
 }
 
 const SearchField = ({ value, placeholder, handler }: SearchFieldProps) => (
-  <div className="pr-4 w-96 flex items-center border border-ink-300 rounded-sm">
+  <div className="pr-4 w-96 flex items-center border-2 border-ink-100 rounded">
     <input
-      className="flex-1 px-4 py-2 outline-none"
+      className="flex-1 px-4 py-2 text-sm outline-none"
       type="text"
       placeholder={placeholder}
       value={value}
