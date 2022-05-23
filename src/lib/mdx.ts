@@ -112,7 +112,7 @@ export const getFileBySlug = async (
     frontmatter: {
       slug: slug,
       title: frontmatter.title,
-      date: frontmatter.date,
+      date: frontmatter.date.toString(),
       tags: frontmatter.tags,
       summary: frontmatter.summary,
       readingTime: readingTime(code).text,
@@ -121,9 +121,7 @@ export const getFileBySlug = async (
   }
 }
 
-export const getAllFilesFrontMatters = async (
-  type: 'post' | 'note' = 'post',
-) => {
+export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
   const directory = SOURCES[type]
   const paths = getMdxFiles(directory)
 
@@ -133,7 +131,7 @@ export const getAllFilesFrontMatters = async (
     const fm = {
       slug: getSlugFromPath(filePath),
       title: frontmatter.title,
-      date: frontmatter.date,
+      date: frontmatter.date.toString(),
       tags: frontmatter.tags,
       summary: frontmatter.summary,
       readingTime: readingTime(content).text,
