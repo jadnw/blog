@@ -148,9 +148,16 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
   }, [])
 }
 
-export const getMdxFrontmattersWithPagination = async (
+export const getTotalPages = async (
   type: 'post' | 'note' = 'post',
-  page: number = 1,
+): Promise<number> => {
+  const frontmatters = await getMdxFrontmatters(type)
+  return Math.ceil(frontmatters.length / ITEMS_PER_PAGE)
+}
+
+export const getMdxFrontmattersWithPagination = async (
+  page: string | number = 1,
+  type: 'post' | 'note' = 'post',
 ) => {
   let frontmatters = await getMdxFrontmatters(type)
   page = +page
