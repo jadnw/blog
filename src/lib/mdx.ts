@@ -20,6 +20,7 @@ const SOURCES = {
   post: path.join(ROOT, '_posts'),
   note: path.join(ROOT, '_notes'),
 }
+const ITEMS_PER_PAGE = 6
 
 export const dateSortDesc = (a: any, b: any) => {
   if (a > b) return -1
@@ -145,4 +146,26 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
 
     return frontmatters
   }, [])
+}
+
+export const getMdxFrontmattersWithPagination = async (
+  type: 'post' | 'note' = 'post',
+  page: number = 1,
+) => {
+  let frontmatters = await getMdxFrontmatters(type)
+  page = +page
+  const totalPages = Math.ceil(frontmatters.length / ITEMS_PER_PAGE)
+  const hasNextPage = page > 0 && page < totalPages
+
+  frontmatters = frontmatters.slice(
+    ITEMS_PER_PAGE * (page - 1),
+    ITEMS_PER_PAGE * page,
+  )
+
+  return {
+    page,
+    totalPages,
+    hasNextPage,
+    frontmatters,
+  }
 }
