@@ -1,4 +1,4 @@
-import ManifyingGlass from '../assets/svgr/magnifying-glass.svg'
+import ManifyingGlass from '@/assets/svgr/magnifying-glass.svg'
 
 interface SearchFieldProps {
   value: string

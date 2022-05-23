@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Logo from '../assets/svgr/logo.svg'
+import Logo from '@/assets/svgr/logo.svg'
 
 const Footer = () => (
   <footer className="text-ink-600 border-t border-ink-300">

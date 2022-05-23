@@ -18,6 +18,10 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
       ink: colors.zinc,
+      primary: colors.indigo,
+      indigo: colors.indigo,
+      green: colors.emerald,
+      yellow: colors.yellow,
     },
     extend: {
       spacing: {

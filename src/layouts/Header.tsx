@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import Logo from '../assets/svgr/logo.svg'
-import Moon from '../assets/svgr/moon.svg'
-import NavLink from './NavLink'
+import Logo from '@/assets/svgr/logo.svg'
+import Moon from '@/assets/svgr/moon.svg'
+import NavLink from '@/layouts/NavLink'
 
 const Header = () => (
   <header className="text-ink-600">

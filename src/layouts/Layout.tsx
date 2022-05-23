@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-import Header from './Header'
-import Footer from './Footer'
+import Header from '@/layouts/Header'
+import Footer from '@/layouts/Footer'
 
 interface LayoutProps {
   title?: string
