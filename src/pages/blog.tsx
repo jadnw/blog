@@ -1,37 +1,31 @@
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 
-import Layout from '@/layouts/Layout'
-import PostGrid from '@/components/PostGrid'
-import SearchField from '@/components/SearchField'
-import Typography from '@/components/Typography'
+import BlogLayout from '@/layouts/BlogLayout'
 
-import { getMdxFrontmatters } from '@/lib/mdx'
+import { getMdxFrontmattersWithPagination } from '@/lib/mdx'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const frontmatters = await getMdxFrontmatters()
+  const data = await getMdxFrontmattersWithPagination()
 
   return {
     props: {
-      frontmatters,
+      ...data,
     },
   }
 }
 
 const Blog: NextPage = ({
+  page,
+  totalPages,
+  hasNextPage,
   frontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <Layout title="Blog | Jaden Wu">
-    <section className="mx-auto py-12 w-wrapper">
-      <Typography text="Blog">
-        <SearchField
-          placeholder="Search Posts ..."
-          value=""
-          handler={() => {}}
-        />
-      </Typography>
-      <PostGrid frontmatters={frontmatters} />
-    </section>
-  </Layout>
+  <BlogLayout
+    page={page}
+    totalPages={totalPages}
+    hasNextPage={hasNextPage}
+    frontmatters={frontmatters}
+  />
 )
 
 export default Blog
