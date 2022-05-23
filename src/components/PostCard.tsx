@@ -16,7 +16,7 @@ const PostCard = ({
     <div className="w-2/3">
       <div className="flex items-center justify-between text-sm">
         <Tags tags={tags} />
-        <time className="text-ink-500" dateTime={date}>
+        <time className="text-ink-500 dark:text-ink-400" dateTime={date}>
           {formatDate(date)}
         </time>
       </div>
@@ -26,10 +26,12 @@ const PostCard = ({
             <h3 className="text-2xl font-bold hover:underline">{title}</h3>
           </a>
         </Link>
-        <p className="pt-2 text-base text-ink-500">{summary}</p>
+        <p className="pt-2 text-base text-ink-600 dark:text-ink-300">
+          {summary}
+        </p>
       </div>
       <div className="flex items-center justify-between text-sm">
-        <span className="text-ink-500">{readingTime}</span>
+        <span className="text-ink-500 dark:text-ink-400">{readingTime}</span>
         <Link href={`/blog/${slug}`}>
           <a className="font-semibold hover:text-primary-500 duration-100">
             Read More &rarr;

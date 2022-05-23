@@ -23,7 +23,7 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
-      <div className="mx-auto py-24 w-wrapper">
+      <div className="mx-auto pt-24 pb-16 w-wrapper">
         <section>
           <h1 className="font-heading text-5xl font-bold">
             Hey, I&apos;m Jay.
@@ -39,9 +39,11 @@ const Home: NextPage = ({
             <Decor />
           </div>
         </section>
-        <section className="my-12 flex flex-col items-start">
-          <span className="w-1/2 h-0.5 block bg-ink-600">&nbsp;</span>
-          <pre className="py-12 font-mono font-medium text-ink-700">
+        <section className="mt-12 flex flex-col items-start">
+          <span className="w-1/2 h-0.5 block bg-ink-600 dark:bg-ink-400">
+            &nbsp;
+          </span>
+          <pre className="py-12 font-mono font-medium text-ink-700 dark:text-ink-200">
             <span className="text-indigo-500">const</span> quote ={' '}
             <span className="text-green-500">
               &apos;It is not enough for code to work&apos;
@@ -69,11 +71,16 @@ const Home: NextPage = ({
             <span className="text-primary-500">$</span> “It is not enough for
             code to work” -- by Robert C. Martin on Clean Code.
           </pre>
-          <span className="self-end w-1/2 h-0.5 block bg-ink-600">&nbsp;</span>
+          <span className="self-end w-1/2 h-0.5 block bg-ink-600 dark:bg-ink-400">
+            &nbsp;
+          </span>
         </section>
-        <section>
+        <section className="pt-16 flex flex-col items-stretch">
           <Typography text="Latest Posts" />
           <PostGrid frontmatters={latestFrontmatters} />
+          <div className="self-center">
+            <Button text="Read More Posts" href="/blog" />
+          </div>
         </section>
       </div>
     </Layout>
