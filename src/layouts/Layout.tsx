@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Header from '@/layouts/Header'
+import Subscribe from '@/layouts/Subscribe'
 import Footer from '@/layouts/Footer'
 
 interface LayoutProps {
@@ -25,6 +26,7 @@ const Layout = ({
     </Head>
     <Header />
     <main className="text-ink-600 bg-white text-lg">{children}</main>
+    <Subscribe />
     <Footer />
   </>
 )
