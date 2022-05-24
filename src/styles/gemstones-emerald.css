@@ -15,6 +15,7 @@ pre[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+	overflow: auto;
 }
 
 /* Selection */
@@ -35,8 +36,14 @@ pre[class*="language-"] *::selection {
 }
 
 /* Code blocks */
+pre[class*="language-"]::-webkit-scrollbar,
+code[class*="language-"]::-webkit-scrollbar {
+  display: none;
+}
+code[class*="language-"],
 pre[class*="language-"] {
-	overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .code-highlight {
