@@ -7,10 +7,10 @@ interface GridProps {
   frontmatters: MDXFrontmatter[]
 }
 
-const Grid = ({ type = 'post', frontmatters }: GridProps) => (
+const Grid = ({ type = 'posts', frontmatters }: GridProps) => (
   <div className="flex flex-col items-stretch divide-y divide-ink-200 dark:divide-ink-700">
     {frontmatters.map((frontmatter) =>
-      type === 'post' ? (
+      type === 'posts' ? (
         <PostCard key={frontmatter.slug} frontmatter={frontmatter} />
       ) : (
         <NoteCard key={frontmatter.slug} frontmatter={frontmatter} />
