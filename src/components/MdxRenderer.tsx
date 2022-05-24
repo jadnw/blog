@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
 import Anchor from '@/components/mdx/Anchor'
+import Img from '@/components/mdx/Img'
 import Pre from '@/components/mdx/Pre'
 import Paragraph from '@/components/mdx/Paragraph'
 import Typo from '@/components/mdx/Typo'
@@ -15,6 +16,7 @@ const components = {
   ul: Ul,
   a: Anchor,
   pre: Pre,
+  img: (props: any) => <Img {...props} />,
 }
 
 const MdxRenderer = ({ code }: { code: string }) => {
