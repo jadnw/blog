@@ -11,13 +11,14 @@ module.exports = {
     fontFamily: {
       heading: ['Glory', 'sans-serif'],
       sans: ['Roboto Flex', 'sans-serif'],
-      mono: ['JetBrains Mono', 'monospace'],
+      mono: ['Iosevka', 'monospace'],
     },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       white: '#ffffff',
       black: '#000000',
+      pre: '#20262a',
       ink: {
         50: '#f2f4f5',
         100: '#e6e9ec',
