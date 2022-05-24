@@ -7,14 +7,20 @@ import Typography from '@/components/Typography'
 import { getItemsByPage } from '@/lib/utils'
 import type { PaginatedFrontmatters } from '../types'
 
-type PostListLayoutProps = PaginatedFrontmatters
+type PostListLayoutProps = PaginatedFrontmatters & {
+  title?: string
+}
 
-const PostListLayout = ({ pagination, frontmatters }: PostListLayoutProps) => {
+const PostListLayout = ({
+  title = 'Blog',
+  pagination,
+  frontmatters,
+}: PostListLayoutProps) => {
   const populatedFrontmatters = getItemsByPage(frontmatters, pagination.page)
   return (
-    <Layout title="Blog | Jaden Wu">
+    <Layout title={title}>
       <section className="mx-auto py-12 w-wrapper">
-        <Typography text="Blog">
+        <Typography text={title}>
           <SearchField
             placeholder="Search posts ..."
             value=""
