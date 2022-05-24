@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import Tags from '@/components/Tags'
+import TagsLine from '@/components/TagsLine'
 import type { MDXFrontmatter } from '../types'
 import { formatDate } from '@/lib/utils'
 
@@ -15,7 +15,7 @@ const PostCard = ({
   <div className="py-12 flex items-center space-x-8">
     <div className="w-2/3">
       <div className="flex items-center justify-between text-sm">
-        <Tags tags={tags} />
+        <TagsLine tags={tags} />
         <time className="text-ink-500 dark:text-ink-400" dateTime={date}>
           {formatDate(date)}
         </time>

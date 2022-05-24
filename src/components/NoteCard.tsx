@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Tags from '@/components/Tags'
+import TagsLine from '@/components/TagsLine'
 import type { MDXFrontmatter } from '../types'
 import { formatDate } from '@/lib/utils'
 
@@ -20,7 +20,7 @@ const NoteCard = ({
     </time>
     <div className="flex-1">
       <div className="flex items-center justify-between text-sm">
-        <Tags tags={tags} />
+        <TagsLine tags={tags} />
       </div>
       <div className="py-4">
         <Link href={`/blog/${slug}`}>
