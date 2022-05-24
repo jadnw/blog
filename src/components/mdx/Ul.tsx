@@ -1,3 +1,5 @@
-const Ul = ({ ...props }) => <ul className="list-disc list-inside" {...props} />
+const Ul = ({ ...props }) => (
+  <ul className="mt-4 list-disc list-inside" {...props} />
+)
 
 export default Ul
