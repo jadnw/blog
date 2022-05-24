@@ -22,7 +22,11 @@ const Blog: NextPage = ({
   pagination,
   frontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <PostListLayout pagination={pagination} frontmatters={frontmatters} />
+  <PostListLayout
+    route="blog"
+    pagination={pagination}
+    frontmatters={frontmatters}
+  />
 )
 
 export default Blog
