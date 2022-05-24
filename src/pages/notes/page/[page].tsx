@@ -5,7 +5,7 @@ import type {
   InferGetStaticPropsType,
 } from 'next'
 
-import NotesLayout from '@/layouts/NotesLayout'
+import NoteListLayout from '@/layouts/NoteListLayout'
 
 import { getMdxFrontmatters } from '@/lib/mdx'
 
@@ -38,7 +38,7 @@ const NotesWithPagination: NextPage = ({
   pagination,
   frontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <NotesLayout pagination={pagination} frontmatters={frontmatters} />
+  <NoteListLayout pagination={pagination} frontmatters={frontmatters} />
 )
 
 export default NotesWithPagination

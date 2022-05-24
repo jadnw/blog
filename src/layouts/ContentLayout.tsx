@@ -10,19 +10,19 @@ import { formatDate } from '@/lib/utils'
 import { GITHUB_REPO_URL } from '@/lib/config'
 import Github from '@/assets/svgr/github.svg'
 
-interface PostLayoutProps {
+interface ContentLayoutProps {
   route: 'posts' | 'notes'
   post: MDXPost
 }
 
-const PostLayout = ({
+const ContentLayout = ({
   route,
   post: {
     toc,
     frontmatter: { slug, title, image, date, tags, summary, readingTime },
     body,
   },
-}: PostLayoutProps) => {
+}: ContentLayoutProps) => {
   return (
     <Layout title={title}>
       <article className="mx-auto py-12 w-wrapper">
@@ -62,4 +62,4 @@ const PostLayout = ({
   )
 }
 
-export default PostLayout
+export default ContentLayout

@@ -5,7 +5,7 @@ import type {
   InferGetStaticPropsType,
 } from 'next'
 
-import PostLayout from '@/layouts/PostLayout'
+import ContentLayout from '@/layouts/ContentLayout'
 
 import { getSlugs, getMdxBySlug } from '@/lib/mdx'
 
@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const Note: NextPage = ({
   note,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <PostLayout route="notes" post={note} />
+  <ContentLayout route="notes" post={note} />
 )
 
 export default Note

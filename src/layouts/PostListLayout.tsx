@@ -7,25 +7,25 @@ import Typography from '@/components/Typography'
 import { getItemsByPage } from '@/lib/utils'
 import type { PaginatedFrontmatters } from '../types'
 
-type NotesLayoutProps = PaginatedFrontmatters
+type PostListLayoutProps = PaginatedFrontmatters
 
-const NotesLayout = ({ pagination, frontmatters }: NotesLayoutProps) => {
+const PostListLayout = ({ pagination, frontmatters }: PostListLayoutProps) => {
   const populatedFrontmatters = getItemsByPage(frontmatters, pagination.page)
   return (
-    <Layout title="Notes | Jaden Wu">
+    <Layout title="Blog | Jaden Wu">
       <section className="mx-auto py-12 w-wrapper">
-        <Typography text="Notes">
+        <Typography text="Blog">
           <SearchField
-            placeholder="Search notes ..."
+            placeholder="Search posts ..."
             value=""
             handler={() => {}}
           />
         </Typography>
-        <Grid type="notes" frontmatters={populatedFrontmatters} />
-        <Pagination route="notes" pagination={pagination} />
+        <Grid frontmatters={populatedFrontmatters} />
+        <Pagination pagination={pagination} />
       </section>
     </Layout>
   )
 }
 
-export default NotesLayout
+export default PostListLayout

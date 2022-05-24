@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 
-import BlogLayout from '@/layouts/BlogLayout'
+import PostListLayout from '@/layouts/PostListLayout'
 
 import { getMdxFrontmatters } from '@/lib/mdx'
 
@@ -22,7 +22,7 @@ const Blog: NextPage = ({
   pagination,
   frontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <BlogLayout pagination={pagination} frontmatters={frontmatters} />
+  <PostListLayout pagination={pagination} frontmatters={frontmatters} />
 )
 
 export default Blog
