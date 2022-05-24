@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import Layout from '@/layouts/Layout'
 import Pagination from '@/components/Pagination'
 import Grid from '@/components/Grid'
@@ -20,7 +22,28 @@ const PostListLayout = ({
   pagination,
   frontmatters,
 }: PostListLayoutProps) => {
-  const populatedFrontmatters = getItemsByPage(frontmatters, pagination.page)
+  const [keyword, setKeyword] = useState('')
+  const onSearchFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(event.target.value)
+  }
+
+  const paginatedFrontmatters = getItemsByPage(frontmatters, pagination.page)
+  const foundFrontmatters = frontmatters.filter((fm) =>
+    fm.title.toLowerCase().includes(keyword.toLowerCase()),
+  )
+  const populatedFrontmatters =
+    keyword !== '' ? foundFrontmatters : paginatedFrontmatters
+
+  const ResultSection = () =>
+    populatedFrontmatters.length > 0 ? (
+      <>
+        <Grid frontmatters={populatedFrontmatters} />
+        <Pagination route={route} pagination={pagination} />
+      </>
+    ) : (
+      <div className="mt-12 text-center">No posts found</div>
+    )
+
   return (
     <Layout title={title}>
       <section className="mx-auto py-12 w-wrapper">
@@ -28,15 +51,14 @@ const PostListLayout = ({
           {searchFieldVisible ? (
             <SearchField
               placeholder="Search posts ..."
-              value=""
-              handler={() => {}}
+              value={keyword}
+              handler={onSearchFieldChange}
             />
           ) : (
             <div>&nbsp;</div>
           )}
         </Typography>
-        <Grid frontmatters={populatedFrontmatters} />
-        <Pagination route={route} pagination={pagination} />
+        <ResultSection />
       </section>
     </Layout>
   )
