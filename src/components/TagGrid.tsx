@@ -23,7 +23,7 @@ const TagItem = ({ tag: { label, numOfPosts } }: TagItemProps) => (
 )
 
 const TagGrid = ({ tags }: TagGridProps) => (
-  <div className="pt-12 flex items-center flex-wrap gap-4  font-medium">
+  <div className="pt-12 flex items-center flex-wrap gap-8 font-medium">
     {tags.map((tag) => (
       <TagItem key={tag.label} tag={tag} />
     ))}
