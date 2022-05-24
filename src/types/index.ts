@@ -27,3 +27,8 @@ export interface PaginatedFrontmatters {
   }
   frontmatters: MDXFrontmatter[]
 }
+
+export interface Tag {
+  label: string
+  numOfPosts: number
+}

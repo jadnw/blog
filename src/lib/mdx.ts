@@ -13,7 +13,7 @@ import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
-import type { TocHeading, MDXFrontmatter, MDXPost } from '../types'
+import type { TocHeading, MDXFrontmatter, MDXPost, Tag } from '../types'
 import { ITEMS_PER_PAGE } from '@/lib/config'
 
 const ROOT = process.cwd()
@@ -155,4 +155,25 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
     totalPages,
     frontmatters,
   }
+}
+
+export const getPostTags = async (): Promise<Tag[]> => {
+  const { frontmatters } = await getMdxFrontmatters()
+
+  const tagsWithNumOfPosts = frontmatters
+    .map((fm) => fm.tags)
+    .flat(1)
+    .reduce((result: { [key: string]: number }, label) => {
+      if (!result.hasOwnProperty(label)) {
+        result[label] = 1
+      } else {
+        ++result[label]
+      }
+      return result
+    }, {})
+
+  return Object.keys(tagsWithNumOfPosts).map((label) => ({
+    label,
+    numOfPosts: tagsWithNumOfPosts[label],
+  }))
 }
