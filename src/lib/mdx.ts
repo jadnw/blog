@@ -174,6 +174,14 @@ export const getPostTags = async (): Promise<Tag[]> => {
   }))
 }
 
+export const getPaginatedPostTags = async () => {
+  const tags = await getPostTags()
+  return tags.map(({ label, numOfPosts }) => ({
+    tag: label,
+    totalPages: Math.ceil(numOfPosts / ITEMS_PER_PAGE),
+  }))
+}
+
 export const getMdxFrontmattersByTag = async (tag: string) => {
   let { frontmatters } = await getMdxFrontmatters()
   frontmatters = frontmatters.filter((fm) => fm.tags.includes(tag))
