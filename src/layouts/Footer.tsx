@@ -11,7 +11,7 @@ const Footer = () => (
         </a>
       </Link>
       <span className="text-ink-500 dark:text-ink-300">
-        Jaden Wu &bull; &copy; 2022
+        Created by Jaden Wu with 🔥 &bull; &copy; 2022
       </span>
     </div>
   </footer>
