@@ -1,0 +1,33 @@
+import Link from 'next/link'
+import type { Tag } from '../types'
+
+interface TagItemProps {
+  tag: Tag
+}
+
+interface TagGridProps {
+  tags: Tag[]
+}
+
+const TagItem = ({ tag: { label, numOfPosts } }: TagItemProps) => (
+  <div>
+    <Link href={`/tags/${label}`}>
+      <a className="hover:underline">
+        <span className="text-primary-500 dark:text-primary-400">
+          # {label}
+        </span>{' '}
+      </a>
+    </Link>
+    <span>({numOfPosts})</span>
+  </div>
+)
+
+const TagGrid = ({ tags }: TagGridProps) => (
+  <div className="pt-12 flex items-center flex-wrap gap-4 text-base font-medium">
+    {tags.map((tag) => (
+      <TagItem key={tag.label} tag={tag} />
+    ))}
+  </div>
+)
+
+export default TagGrid
