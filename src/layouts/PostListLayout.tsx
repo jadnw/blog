@@ -10,11 +10,13 @@ import type { PaginatedFrontmatters } from '../types'
 type PostListLayoutProps = PaginatedFrontmatters & {
   route: string
   title?: string
+  searchFieldVisible?: boolean
 }
 
 const PostListLayout = ({
   route = 'blog',
   title = 'Blog',
+  searchFieldVisible = true,
   pagination,
   frontmatters,
 }: PostListLayoutProps) => {
@@ -23,11 +25,15 @@ const PostListLayout = ({
     <Layout title={title}>
       <section className="mx-auto py-12 w-wrapper">
         <Typography text={title}>
-          <SearchField
-            placeholder="Search posts ..."
-            value=""
-            handler={() => {}}
-          />
+          {searchFieldVisible ? (
+            <SearchField
+              placeholder="Search posts ..."
+              value=""
+              handler={() => {}}
+            />
+          ) : (
+            <div>&nbsp;</div>
+          )}
         </Typography>
         <Grid frontmatters={populatedFrontmatters} />
         <Pagination route={route} pagination={pagination} />
