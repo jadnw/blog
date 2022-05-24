@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
+import Anchor from '@/components/mdx/Anchor'
 import Pre from '@/components/mdx/Pre'
 import Paragraph from '@/components/mdx/Paragraph'
 import Typo from '@/components/mdx/Typo'
@@ -12,6 +13,7 @@ const components = {
   h3: (props: any) => <Typo as="h3" {...props} />,
   p: Paragraph,
   ul: Ul,
+  a: Anchor,
   pre: Pre,
 }
 
