@@ -18,7 +18,7 @@ const TagItem = ({ tag: { label, numOfPosts } }: TagItemProps) => (
         </span>{' '}
       </a>
     </Link>
-    <span>({numOfPosts})</span>
+    <span className="text-ink-500 dark:text-ink-300">({numOfPosts})</span>
   </div>
 )
 
