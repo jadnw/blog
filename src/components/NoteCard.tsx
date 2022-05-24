@@ -20,10 +20,10 @@ const NoteCard = ({
     </time>
     <div className="flex-1">
       <div className="flex items-center justify-between text-sm">
-        <TagsLine tags={tags} />
+        <TagsLine tags={tags} disabled />
       </div>
       <div className="py-4">
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/notes/${slug}`}>
           <a>
             <h3 className="text-2xl font-bold hover:underline">{title}</h3>
           </a>
@@ -34,7 +34,7 @@ const NoteCard = ({
       </div>
       <div className="flex items-center justify-between text-sm">
         <span className="text-ink-500 dark:text-ink-400">{readingTime}</span>
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/notes/${slug}`}>
           <a className="font-semibold hover:text-primary-500 dark:hover:text-primary-400 duration-100">
             Read More &rarr;
           </a>
