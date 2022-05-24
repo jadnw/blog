@@ -109,7 +109,7 @@ export const getMdxBySlug = async (
     frontmatter: {
       slug: slug,
       title: frontmatter.title,
-      image: frontmatter.image,
+      image: frontmatter.image ?? null,
       date: frontmatter.date.toString(),
       tags: frontmatter.tags,
       summary: frontmatter.summary,
