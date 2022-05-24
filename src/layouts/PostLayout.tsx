@@ -44,7 +44,7 @@ const PostLayout = ({
             </a>
           </div>
         </div>
-        <div className="mx-auto w-content leading-relaxed">
+        <div className="mx-auto w-content leading-loose">
           {route === 'posts' && image && (
             <div className="my-6 aspect-[2/1] rounded overflow-hidden">
               <Image src={image} alt={title} width="768" height="384" />
