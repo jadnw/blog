@@ -50,9 +50,10 @@ const PostLayout = ({
               <Image src={image} alt={title} width="768" height="384" />
             </div>
           )}
-          <p className="pt-4 border-t border-ink-200 dark:border-ink-700">
-            {summary}
-          </p>
+          {route === 'posts' && (
+            <hr className="border-t border-ink-200 dark:border-ink-700" />
+          )}
+          <p className="pt-4">{summary}</p>
           <Toc toc={toc} />
           <MdxRenderer code={body} />
         </div>
