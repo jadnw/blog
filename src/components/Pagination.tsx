@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 interface PaginationProps {
-  route?: 'blog' | 'notes'
+  route?: string
   pagination: {
     page: number
     totalPages: number

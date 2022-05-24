@@ -8,10 +8,12 @@ import { getItemsByPage } from '@/lib/utils'
 import type { PaginatedFrontmatters } from '../types'
 
 type PostListLayoutProps = PaginatedFrontmatters & {
+  route: string
   title?: string
 }
 
 const PostListLayout = ({
+  route = 'blog',
   title = 'Blog',
   pagination,
   frontmatters,
@@ -28,7 +30,7 @@ const PostListLayout = ({
           />
         </Typography>
         <Grid frontmatters={populatedFrontmatters} />
-        <Pagination pagination={pagination} />
+        <Pagination route={route} pagination={pagination} />
       </section>
     </Layout>
   )

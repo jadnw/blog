@@ -51,6 +51,7 @@ const Tag: NextPage = ({
   frontmatters,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <PostListLayout
+    route={`tags/${tag}`}
     title={`Tag: ${tag}`}
     pagination={pagination}
     frontmatters={frontmatters}
