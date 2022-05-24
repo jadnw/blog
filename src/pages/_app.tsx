@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import '@/styles/prism-gemstones-emerald.css'
+import '@/styles/gemstones-emerald.css'
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
