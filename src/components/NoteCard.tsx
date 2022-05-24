@@ -21,7 +21,6 @@ const NoteCard = ({
     <div className="flex-1">
       <div className="flex items-center justify-between text-sm">
         <Tags tags={tags} />
-        <span>{readingTime}</span>
       </div>
       <div className="py-4">
         <Link href={`/blog/${slug}`}>
@@ -34,6 +33,7 @@ const NoteCard = ({
         </p>
       </div>
       <div className="flex items-center justify-between text-sm">
+        <span className="text-ink-500 dark:text-ink-400">{readingTime}</span>
         <Link href={`/blog/${slug}`}>
           <a className="font-semibold hover:text-primary-500 duration-100">
             Read More &rarr;
