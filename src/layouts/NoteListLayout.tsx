@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import Layout from '@/layouts/Layout'
 import Pagination from '@/components/Pagination'
 import Grid from '@/components/Grid'
@@ -10,19 +12,39 @@ import type { PaginatedFrontmatters } from '../types'
 type NoteListLayoutProps = PaginatedFrontmatters
 
 const NoteListLayout = ({ pagination, frontmatters }: NoteListLayoutProps) => {
-  const populatedFrontmatters = getItemsByPage(frontmatters, pagination.page)
+  const [keyword, setKeyword] = useState('')
+  const onSearchFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(event.target.value)
+  }
+
+  const paginatedFrontmatters = getItemsByPage(frontmatters, pagination.page)
+  const foundFrontmatters = frontmatters.filter((fm) =>
+    fm.title.toLowerCase().includes(keyword.toLowerCase()),
+  )
+  const populatedFrontmatters =
+    keyword !== '' ? foundFrontmatters : paginatedFrontmatters
+
+  const ResultSection = () =>
+    populatedFrontmatters.length > 0 ? (
+      <>
+        <Grid type="notes" frontmatters={populatedFrontmatters} />
+        <Pagination route="notes" pagination={pagination} />
+      </>
+    ) : (
+      <div className="mt-12 text-center">No notes found</div>
+    )
+
   return (
     <Layout title="Notes | Jaden Wu">
       <section className="mx-auto py-12 w-wrapper">
         <Typography text="Notes">
           <SearchField
             placeholder="Search notes ..."
-            value=""
-            handler={() => {}}
+            value={keyword}
+            handler={onSearchFieldChange}
           />
         </Typography>
-        <Grid type="notes" frontmatters={populatedFrontmatters} />
-        <Pagination route="notes" pagination={pagination} />
+        <ResultSection />
       </section>
     </Layout>
   )
