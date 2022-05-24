@@ -48,7 +48,7 @@ export const getSlugs = (type: 'post' | 'note' = 'post'): string[] => {
   return postPaths.map((p) => getSlugFromPath(p))
 }
 
-export const getFileBySlug = async (
+export const getMdxBySlug = async (
   slug: string,
   type: 'post' | 'note' = 'post',
 ): Promise<MDXPost> => {
@@ -94,15 +94,11 @@ export const getFileBySlug = async (
       return options
     },
     esbuildOptions(options) {
-      options.minify = false
-      options.target = [
-        'es2020',
-        'chrome58',
-        'firefox57',
-        'safari11',
-        'edge16',
-        'node12',
-      ]
+      options.minify = true
+      options.loader = {
+        ...options.loader,
+        '.ts': 'tsx',
+      }
 
       return options
     },
