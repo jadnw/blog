@@ -30,7 +30,7 @@ module.exports = {
         800: '#1c2225',
         900: '#101214',
       },
-      primary: colors.cyan,
+      primary: colors.violet,
       purple: colors.violet,
       green: colors.emerald,
       blue: colors.sky,

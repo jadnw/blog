@@ -11,7 +11,7 @@ const Tag = ({ tag }: { tag: string }) => (
 )
 
 const Tags = ({ tags }: TagsProps) => (
-  <div className="flex items-center space-x-4 font-semibold text-primary-500">
+  <div className="flex items-center space-x-4 font-semibold text-primary-500 dark:text-primary-400">
     {tags.map((t) => (
       <Tag key={t} tag={t} />
     ))}
