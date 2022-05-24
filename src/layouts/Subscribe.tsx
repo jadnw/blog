@@ -6,10 +6,10 @@ const Subscribe = () => {
   return (
     <section
       id="subscribe"
-      className="text-base text-ink-700 dark:text-ink-200 bg-white dark:bg-ink-800 border-t border-dashed border-ink-400"
+      className="text-base text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 border-t border-dashed border-ink-400"
     >
       <div className="relative mx-auto py-16 w-wrapper">
-        <Scissors className="absolute top-0 left-0 -translate-y-1/2 text-ink-700 dark:text-ink-300 w-6 h-6" />
+        <Scissors className="absolute top-0 left-0 -translate-y-1/2 text-ink-600 dark:text-ink-300 w-6 h-6" />
         <Typography text="Subscribe My Blog" />
         <p className="pt-6">
           Stay updated. Receive the latest stuff straight to your mailbox.

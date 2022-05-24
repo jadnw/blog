@@ -45,7 +45,7 @@ const Home: NextPage = ({
           <span className="w-1/2 h-0.5 block bg-ink-600 dark:bg-ink-400">
             &nbsp;
           </span>
-          <pre className="py-12 font-mono font-medium text-ink-700 dark:text-ink-200">
+          <pre className="py-12 font-mono font-medium text-ink-600 dark:text-ink-200">
             <span className="text-purple-500 dark:text-purple-400">const</span>{' '}
             quote ={' '}
             <span className="text-green-500">
@@ -67,7 +67,7 @@ const Home: NextPage = ({
             <br />
             <span className="text-ink-400">
               &#47;&#47;{' '}
-              <span className="px-2 inline-block font-bold text-ink-700 bg-yellow-500">
+              <span className="px-2 inline-block font-bold text-ink-600 bg-yellow-500">
                 TODO
               </span>
               : Use literal string in this case. Best practice?

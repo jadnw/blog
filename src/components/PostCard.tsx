@@ -26,7 +26,7 @@ const PostCard = ({
             <h3 className="text-2xl font-bold hover:underline">{title}</h3>
           </a>
         </Link>
-        <p className="pt-2 text-ink-700 dark:text-ink-300 leading-relaxed">
+        <p className="pt-2 text-ink-600 dark:text-ink-300 leading-relaxed">
           {summary}
         </p>
       </div>

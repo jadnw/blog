@@ -36,7 +36,7 @@ const PostLayout = ({
             <time dateTime={date}>{formatDate(date)}</time>
             <span>{readingTime}</span>
             <a
-              className="flex items-center space-x-2 hover:text-ink-700 dark:hover:text-ink-200 hover:underline"
+              className="flex items-center space-x-2 hover:text-ink-600 dark:hover:text-ink-200 hover:underline"
               href={`${GITHUB_REPO_URL}/_${route}/${slug}.mdx`}
             >
               <Github className="w-4 h-4" />

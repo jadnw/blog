@@ -5,7 +5,7 @@ import NavLink from '@/layouts/NavLink'
 import DarkModeButton from '@/layouts/DarkModeButton'
 
 const Header = () => (
-  <header className="text-ink-700 dark:text-ink-200 bg-white dark:bg-ink-800">
+  <header className="text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800">
     <div className="mx-auto py-8 w-wrapper flex items-center justify-between">
       <Link href="/">
         <a className="flex items-center space-x-4 font-heading font-extrabold text-3xl">

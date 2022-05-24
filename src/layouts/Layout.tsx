@@ -25,7 +25,7 @@ const Layout = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header />
-    <main className="min-h-screen text-ink-700 dark:text-ink-200 bg-white dark:bg-ink-800 text-base">
+    <main className="min-h-screen text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 text-base">
       {children}
     </main>
     <Subscribe />
