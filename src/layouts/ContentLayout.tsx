@@ -4,8 +4,9 @@ import Layout from '@/layouts/Layout'
 import TagsLine from '@/components/TagsLine'
 import Toc from '@/components/Toc'
 import MdxRenderer from '@/components/MdxRenderer'
+import AdjacentsNav from '@/components/AdjacentsNav'
 
-import type { MDXPost } from '../types'
+import type { Adjacents, MDXPost } from '../types'
 import { formatDate } from '@/lib/utils'
 import { GITHUB_REPO_URL } from '@/lib/config'
 import Github from '@/assets/svgr/github.svg'
@@ -13,6 +14,7 @@ import Github from '@/assets/svgr/github.svg'
 interface ContentLayoutProps {
   route: 'posts' | 'notes'
   post: MDXPost
+  adjacents: Adjacents
 }
 
 const ContentLayout = ({
@@ -22,6 +24,7 @@ const ContentLayout = ({
     frontmatter: { slug, title, image, date, tags, summary, readingTime },
     body,
   },
+  adjacents,
 }: ContentLayoutProps) => {
   return (
     <Layout title={title}>
@@ -56,6 +59,7 @@ const ContentLayout = ({
           <p className="pt-4">{summary}</p>
           <Toc toc={toc} />
           <MdxRenderer code={body} />
+          <AdjacentsNav route="blog" adjacents={adjacents} />
         </div>
       </article>
     </Layout>

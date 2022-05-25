@@ -7,7 +7,7 @@ import type {
 
 import ContentLayout from '@/layouts/ContentLayout'
 
-import { getSlugs, getMdxBySlug } from '@/lib/mdx'
+import { getSlugs, getMdxBySlug, getAdjacentFrontmatters } from '@/lib/mdx'
 
 export const getStaticPaths: GetStaticPaths = () => {
   const slugs = getSlugs()
@@ -20,18 +20,23 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const post = await getMdxBySlug(context.params!.slug as string)
+  const adjacents = await getAdjacentFrontmatters(
+    context.params!.slug as string,
+  )
 
   return {
     props: {
-      post: post,
+      post,
+      adjacents,
     },
   }
 }
 
 const Post: NextPage = ({
   post,
+  adjacents,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <ContentLayout route="posts" post={post} />
+  <ContentLayout route="posts" post={post} adjacents={adjacents} />
 )
 
 export default Post

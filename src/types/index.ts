@@ -32,3 +32,8 @@ export interface Tag {
   label: string
   numOfPosts: number
 }
+
+export interface Adjacents {
+  prev: MDXFrontmatter
+  next: MDXFrontmatter
+}
