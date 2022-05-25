@@ -10,7 +10,7 @@ const remarkToc = (options: any) => {
       const text = toString(node)
       options.exportRef.push({
         value: text,
-        id: '##' + slugger.slug(text),
+        id: slugger.slug(text),
         depth: node.depth,
       })
     })
