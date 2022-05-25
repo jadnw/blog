@@ -14,23 +14,32 @@ const AdjacentsNav = ({
   route,
   adjacents: { prev, next },
 }: AdjacentsNavProps) => (
-  <div className="mt-12 py-2 flex flex-col items-stretch space-y-2 border-t border-ink-400 text-ink-500 dark:text-ink-400">
+  <div className="mt-16 py-2 flex flex-col items-start border-t border-b border-ink-400 text-ink-600 dark:text-ink-400 text-sm leading-normal">
     {prev && (
-      <div className="flex items-center justify-between">
+      <div className="flex items-center space-x-2">
         <Link href={`/${route}/${prev.slug}`}>
-          <a className="flex items-center font-medium hover:underline hover:text-ink-900 dark:hover:text-white duration-75">
+          <a className="py-1 flex items-center font-medium hover:underline hover:text-ink-900 dark:hover:text-white duration-75">
             <ArrowLeft className="w-4 h-4" />
             <span className="ml-2">{prev.title}</span>
           </a>
         </Link>
-        <span className="text-ink-400 text-sm">{prev.readingTime}</span>
+        <span className="hidden sm:inline text-ink-400 dark:text-ink-500">
+          ({prev.readingTime})
+        </span>
       </div>
     )}
+    {prev && next && (
+      <span className="block w-1/2 h-px translate-x-1/2 bg-ink-100 dark:bg-ink-700">
+        &nbsp;
+      </span>
+    )}
     {next && (
-      <div className="flex items-center justify-between">
-        <span className="text-ink-400 text-sm">{next.readingTime}</span>
+      <div className="self-end flex items-center space-x-2">
+        <span className="hidden sm:inline text-ink-400 dark:text-ink-500">
+          ({next.readingTime})
+        </span>
         <Link href={`/${route}/${next.slug}`}>
-          <a className="flex items-center font-medium hover:underline hover:text-ink-900 dark:hover:text-white duration-75">
+          <a className="py-1 flex items-center font-medium hover:underline hover:text-ink-900 dark:hover:text-white duration-75">
             <span className="mr-2">{next.title}</span>
             <ArrowRight className="w-4 h-4" />
           </a>
