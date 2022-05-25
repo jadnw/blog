@@ -13,6 +13,12 @@ module.exports = {
       sans: ['Roboto Flex', 'sans-serif'],
       mono: ['Iosevka', 'monospace'],
     },
+    screens: {
+      xs: '320px',
+      sm: '540px',
+      md: '768px',
+      lg: '1024px',
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
