@@ -10,7 +10,7 @@ interface TypoProps {
 
 const Typo = ({ as, ...props }: TypoProps) => (
   <h1
-    className={`z-10 mt-8 mb-2 font-bold ${headingFontSizes[as]} scroll-mt-32`}
+    className={`z-10 mt-8 mb-2 font-bold ${headingFontSizes[as]} scroll-mt-4`}
     {...props}
   />
 )
