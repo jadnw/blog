@@ -12,7 +12,7 @@ import { GITHUB_REPO_URL } from '@/lib/config'
 import Github from '@/assets/svgr/github.svg'
 
 interface ContentLayoutProps {
-  route: 'posts' | 'notes'
+  route: 'blog' | 'notes'
   post: MDXPost
   adjacents: Adjacents
 }
@@ -48,18 +48,18 @@ const ContentLayout = ({
           </div>
         </div>
         <div className="mx-auto w-content leading-loose">
-          {route === 'posts' && image && (
+          {route === 'blog' && image && (
             <div className="my-4 aspect-[2/1] rounded overflow-hidden">
               <Image src={image} alt={title} width="768" height="384" />
             </div>
           )}
-          {route === 'posts' && (
+          {route === 'blog' && (
             <hr className="border-t border-ink-200 dark:border-ink-700" />
           )}
           <p className="pt-4">{summary}</p>
           <Toc toc={toc} />
           <MdxRenderer code={body} />
-          <AdjacentsNav route="blog" adjacents={adjacents} />
+          <AdjacentsNav route={route} adjacents={adjacents} />
         </div>
       </article>
     </Layout>
