@@ -26,51 +26,48 @@ const ContentLayout = ({
     body,
   },
   adjacents,
-}: ContentLayoutProps) => {
-  console.log(toc)
-  return (
-    <Layout title={title}>
-      <article className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper">
-        <div className="pb-4 text-center font-bold text-2xl sm:text-3xl border-b border-ink-200 dark:border-ink-600">
-          <h1 className="mx-auto pb-4 w-full md:w-content">{title}</h1>
-          <div className="mx-auto w-full md:w-content grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-0 sm:flex sm:items-center sm:justify-between text-sm font-medium text-ink-400 text-left">
-            <div className="flex items-center space-x-2">
-              <span>Tags:</span>
-              <TagsLine tags={tags} />
-            </div>
-            <time dateTime={date}>{formatDate(date)}</time>
-            <span>{readingTime}</span>
-            <a
-              className="flex items-center space-x-2 hover:text-ink-600 dark:hover:text-ink-200 hover:underline"
-              href={`${GITHUB_REPO_URL}/_${
-                route === 'blog' ? 'posts' : route
-              }/${slug}.mdx`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Github className="w-4 h-4" />
-              <span>Edit on Github</span>
-            </a>
+}: ContentLayoutProps) => (
+  <Layout title={title}>
+    <article className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper">
+      <div className="pb-4 text-center font-bold text-2xl sm:text-3xl border-b border-ink-200 dark:border-ink-600">
+        <h1 className="mx-auto pb-4 w-full md:w-content">{title}</h1>
+        <div className="mx-auto w-full md:w-content grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-0 sm:flex sm:items-center sm:justify-between text-sm font-medium text-ink-400 text-left">
+          <div className="flex items-center space-x-2">
+            <span>Tags:</span>
+            <TagsLine tags={tags} />
           </div>
+          <time dateTime={date}>{formatDate(date)}</time>
+          <span>{readingTime}</span>
+          <a
+            className="flex items-center space-x-2 hover:text-ink-600 dark:hover:text-ink-200 hover:underline"
+            href={`${GITHUB_REPO_URL}/_${
+              route === 'blog' ? 'posts' : route
+            }/${slug}.mdx`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Github className="w-4 h-4" />
+            <span>Edit on Github</span>
+          </a>
         </div>
-        <div className="mx-auto w-full md:w-content leading-loose">
-          {route === 'blog' && image && (
-            <div className="my-4 aspect-[2/1] rounded overflow-hidden">
-              <Image src={image} alt={title} width="768" height="384" />
-            </div>
-          )}
-          {route === 'blog' && (
-            <hr className="border-t border-ink-200 dark:border-ink-700" />
-          )}
-          <p className="pt-4">{summary}</p>
-          <Toc toc={toc} />
-          <MdxRenderer code={body} />
-          <AdjacentsNav route={route} adjacents={adjacents} />
-          <Comments />
-        </div>
-      </article>
-    </Layout>
-  )
-}
+      </div>
+      <div className="mx-auto w-full md:w-content leading-loose">
+        {route === 'blog' && image && (
+          <div className="my-4 aspect-[2/1] rounded overflow-hidden">
+            <Image src={image} alt={title} width="768" height="384" />
+          </div>
+        )}
+        {route === 'blog' && (
+          <hr className="border-t border-ink-200 dark:border-ink-700" />
+        )}
+        <p className="pt-4">{summary}</p>
+        <Toc toc={toc} />
+        <MdxRenderer code={body} />
+        <AdjacentsNav route={route} adjacents={adjacents} />
+        <Comments />
+      </div>
+    </article>
+  </Layout>
+)
 
 export default ContentLayout
