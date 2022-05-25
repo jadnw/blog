@@ -2,7 +2,7 @@ export const ITEMS_PER_PAGE = 6
 export const GITHUB_REPO_URL = 'https://github.com/jadnw/blog/blob/main'
 
 export const siteMetadata = {
-  title: 'Jaden Wu',
+  title: 'Jaden Wu ☆  Programming Blog',
   author: 'Jaden Wu',
   logoText: 'Jaden.Wu',
   description: "Jaden Wu's personal programming blog",

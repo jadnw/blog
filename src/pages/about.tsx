@@ -4,9 +4,9 @@ import Layout from '@/layouts/Layout'
 import Typography from '@/components/Typography'
 
 const About: NextPage = () => (
-  <Layout title="About Me">
+  <Layout title="About">
     <section className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper leading-loose">
-      <Typography text="About Me" />
+      <Typography text="About" />
       <h3 className="mt-12 text-xl font-bold">Me, Myself and I</h3>
       <p className="mt-2">
         Hey, I&apos;m Jay 😉. To get to know more about me, you can visit my
