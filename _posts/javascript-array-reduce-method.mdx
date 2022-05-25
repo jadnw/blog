@@ -52,7 +52,7 @@ result = reduce([1, 2, 3], (acc, num) => acc + num, 0);
 
 The data we are starting with is an array of objects which represent people:
 
-```js
+```js:lib/reduce.ts
 const people = [
   { id: "1", name: "Leigh", age: 35 },
   { id: "2", name: "Jenny", age: 30 },
@@ -70,7 +70,7 @@ result = people.reduce((acc, person) => acc + 1, 0);
 
 We can sum numbers using reduce. Much like the length example above, we can start with 0, and instead of adding 1 upon each iteration, we can add the `person.age` property to our accumulated value.
 
-```js
+```js:webpack.config.js
 result = people.reduce((acc, person) => acc + person.age, 0);
 ```
 
