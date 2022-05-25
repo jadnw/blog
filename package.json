@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "devicon": "^2.15.1",
     "esbuild": "^0.14.39",
     "github-slugger": "^1.4.0",
     "gray-matter": "^4.0.3",

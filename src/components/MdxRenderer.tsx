@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
 import Anchor from '@/components/mdx/Anchor'
+import CodeTitle from '@/components/mdx/CodeTitle'
 import Img from '@/components/mdx/Img'
 import Pre from '@/components/mdx/Pre'
 import Paragraph from '@/components/mdx/Paragraph'
@@ -16,6 +17,12 @@ const components = {
   ul: Ul,
   a: Anchor,
   pre: Pre,
+  div: (props: any) =>
+    props.className === 'rehype-code-title' ? (
+      <CodeTitle {...props} />
+    ) : (
+      <div {...props} />
+    ),
   img: (props: any) => <Img {...props} />,
 }
 

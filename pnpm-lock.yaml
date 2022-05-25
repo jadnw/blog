@@ -7,6 +7,7 @@ specifiers:
   '@types/react': 18.0.9
   '@types/react-dom': 18.0.4
   autoprefixer: ^10.4.7
+  devicon: ^2.15.1
   esbuild: ^0.14.39
   eslint: 8.16.0
   eslint-config-next: 12.1.6
@@ -34,6 +35,7 @@ specifiers:
   unist-util-visit: ^4.1.0
 
 dependencies:
+  devicon: 2.15.1
   esbuild: 0.14.39
   github-slugger: 1.4.0
   gray-matter: 4.0.3
@@ -2440,6 +2442,10 @@ packages:
       defined: 1.0.0
       minimist: 1.2.6
     dev: true
+
+  /devicon/2.15.1:
+    resolution: {integrity: sha512-iyapbDVaq1PgMSMZ4IekgjH230aSUU4kHmZ142lQ2TJ+9HB4P4V78eNDkyaQEEoi0KJhxIGPcTSFqxHaZ4OMyw==}
+    dev: false
 
   /didyoumean/1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}

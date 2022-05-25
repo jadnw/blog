@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 
 import '@/styles/globals.css'
 import '@/styles/gemstones-emerald.css'
+import 'devicon/devicon.min.css'
 import { siteMetadata } from '@/lib/config'
 
 function MyApp({ Component, pageProps }: AppProps) {
