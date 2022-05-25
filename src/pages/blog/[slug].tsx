@@ -36,7 +36,7 @@ const Post: NextPage = ({
   post,
   adjacents,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <ContentLayout route="posts" post={post} adjacents={adjacents} />
+  <ContentLayout route="blog" post={post} adjacents={adjacents} />
 )
 
 export default Post
