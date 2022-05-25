@@ -16,12 +16,12 @@ const Subscribe = () => {
         </p>
         <div className="mt-8 w-full sm:w-96 flex items-stretch">
           <input
-            className="flex-1 px-4 bg-white dark:bg-ink-800 border-2 border-r-0 border-ink-200 dark:border-ink-500 rounded-tl rounded-bl outline-none"
+            className="xs:flex-1 px-4 w-full bg-white dark:bg-ink-800 border-2 border-r-0 border-ink-200 dark:border-ink-500 rounded-tl rounded-bl outline-none"
             type="email"
             placeholder="Enter your email"
           />
-          <button className="px-6 py-3 text-white dark:text-ink-800 bg-ink-600 dark:bg-white rounded-tr rounded-br">
-            <ArrowRight className="h-5" />
+          <button className="px-4 xs:px-6 py-3 text-white dark:text-ink-800 bg-ink-600 dark:bg-white rounded-tr rounded-br">
+            <ArrowRight className="h-4 xs:h-5" />
           </button>
         </div>
       </div>
