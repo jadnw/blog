@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import Logo from '@/assets/svgr/logo.svg'
@@ -10,6 +10,13 @@ const Header = () => {
   const toggleNav = () => {
     setNavOpen(!navOpen)
   }
+
+  useEffect(() => {
+    const body = document.body
+    body.className = navOpen
+      ? 'overflow-hidden sm:overflow-auto'
+      : 'overflow-auto'
+  }, [navOpen])
 
   return (
     <header className="relative text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 z-50">
