@@ -13,7 +13,7 @@ const DarkModeButton = () => {
 
   return (
     <button
-      className={`px-4 py-1 ${
+      className={`ml-auto sm:ml-0 px-4 py-1 ${
         darkModeEnabled ? 'rotate-90' : 'rotate-0'
       } duration-200`}
       onClick={toggleDarkMode}

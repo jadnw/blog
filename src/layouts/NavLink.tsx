@@ -14,9 +14,9 @@ const NavLink = ({ href, exact = false, children }: NavLinkProps) => {
   return (
     <Link href={href}>
       <a
-        className={`px-4 py-1 ${
-          active ? 'text-primary-500 dark:text-primary-400' : ''
-        }`}
+        className={`px-4 py-4 sm:py-1${
+          active ? ' text-primary-500 dark:text-primary-400' : ''
+        } block`}
       >
         {children}
       </a>
