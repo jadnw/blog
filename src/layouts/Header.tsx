@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className="relative text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 z-50">
-      <div className="mx-auto py-4 sm:py-8 px-4 lg:px-0 w-full lg:px-4 lg:px-0 w-full lg:w-wrapper flex items-center">
+      <div className="mx-auto py-4 sm:py-8 px-4 lg:px-0 w-full lg:w-wrapper flex items-center">
         <Link href="/">
           <a className="flex items-center space-x-4 font-heading font-extrabold text-2xl md:text-3xl">
             <Logo className="w-6 md:w-8 h-6 md:h-8" />
@@ -22,7 +22,7 @@ const Header = () => {
         </Link>
         <nav
           className={`absolute sm:relative top-full ml-0 sm:ml-auto w-full sm:w-auto ${
-            navOpen ? 'left-0' : '-left-full'
+            navOpen ? 'left-0' : '-left-full sm:left-0'
           } h-screen sm:h-auto font-sans font-medium text-xl sm:text-sm md:text-base bg-ink-900 sm:bg-ink-800 overflow-hidden duration-200`}
         >
           <ul className="flex flex-col sm:flex-row items-center">
