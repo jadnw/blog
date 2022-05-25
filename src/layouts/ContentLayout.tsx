@@ -44,6 +44,8 @@ const ContentLayout = ({
               href={`${GITHUB_REPO_URL}/_${
                 route === 'blog' ? 'posts' : route
               }/${slug}.mdx`}
+              target="_blank"
+              rel="noreferrer"
             >
               <Github className="w-4 h-4" />
               <span>Edit on Github</span>
