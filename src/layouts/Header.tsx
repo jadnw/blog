@@ -5,6 +5,8 @@ import Logo from '@/assets/svgr/logo.svg'
 import NavLink from '@/layouts/NavLink'
 import DarkModeButton from '@/layouts/DarkModeButton'
 
+import { siteMetadata } from '@/lib/config'
+
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false)
   const toggleNav = () => {
@@ -24,7 +26,7 @@ const Header = () => {
         <Link href="/">
           <a className="flex items-center space-x-2 sm:space-x-4 font-heading font-extrabold text-xl xs:text-2xl md:text-3xl">
             <Logo className="w-4 xs:w-6 md:w-8" />
-            <span>Jaden.Wu</span>
+            <span>{siteMetadata.logoText}</span>
           </a>
         </Link>
         <nav
