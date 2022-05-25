@@ -14,7 +14,7 @@ module.exports = {
       mono: ['Iosevka', 'monospace'],
     },
     screens: {
-      xs: '320px',
+      xs: '360px',
       sm: '540px',
       md: '768px',
       lg: '1024px',
