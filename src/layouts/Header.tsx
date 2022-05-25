@@ -30,7 +30,7 @@ const Header = () => {
         <nav
           className={`absolute sm:relative top-full ml-0 sm:ml-auto w-full sm:w-auto ${
             navOpen ? 'left-0' : '-left-full sm:left-0'
-          } h-screen sm:h-auto font-sans font-medium text-xl sm:text-sm md:text-base bg-ink-900 sm:bg-ink-800 overflow-hidden duration-200`}
+          } h-screen sm:h-auto font-sans font-medium text-xl sm:text-sm md:text-base bg-white dark:bg-ink-900 dark:sm:bg-ink-800 overflow-hidden duration-200`}
         >
           <ul className="flex flex-col sm:flex-row items-center">
             <li>
@@ -53,14 +53,14 @@ const Header = () => {
             <span
               className={`absolute left-0 ${
                 navOpen ? 'top-1/2 rotate-45 -translate-y-1/2' : 'top-0'
-              } w-full h-0.5 block bg-ink-100 rounded duration-200`}
+              } w-full h-1 block bg-ink-600 dark:bg-ink-200 rounded-lg duration-200`}
             >
               &nbsp;
             </span>
             <span
               className={`absolute left-0 ${
                 navOpen ? 'bottom-1/2 -rotate-45 translate-y-1/2' : 'bottom-0'
-              } w-full h-0.5 block bg-ink-100 rounded duration-200`}
+              } w-full h-1 block bg-ink-600 dark:bg-ink-200 rounded-lg duration-200`}
             >
               &nbsp;
             </span>
