@@ -36,7 +36,7 @@ const NoteListLayout = ({ pagination, frontmatters }: NoteListLayoutProps) => {
 
   return (
     <Layout title="Notes | Jaden Wu">
-      <section className="mx-auto py-12 w-wrapper">
+      <section className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper">
         <Typography text="Notes">
           <SearchField
             placeholder="Search notes ..."

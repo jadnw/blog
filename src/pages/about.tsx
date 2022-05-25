@@ -5,7 +5,7 @@ import Typography from '@/components/Typography'
 
 const About: NextPage = () => (
   <Layout title="About Me">
-    <section className="mx-auto py-12 w-wrapper leading-loose">
+    <section className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper leading-loose">
       <Typography text="About Me" />
       <h3 className="mt-12 text-xl font-bold">Me, Myself and I</h3>
       <p className="mt-2">

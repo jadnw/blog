@@ -25,7 +25,7 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
-      <div className="mx-auto pt-24 pb-16 w-wrapper">
+      <div className="mx-auto pt-24 pb-16 px-4 lg:px-0 w-full lg:w-wrapper">
         <section>
           <h1 className="font-heading text-5xl font-bold">
             Hey, I&apos;m Jay.

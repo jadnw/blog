@@ -29,10 +29,10 @@ const ContentLayout = ({
 }: ContentLayoutProps) => {
   return (
     <Layout title={title}>
-      <article className="mx-auto py-12 w-wrapper">
+      <article className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper">
         <div className="pb-4 text-center font-bold text-3xl border-b border-ink-200 dark:border-ink-600">
-          <h1 className="mx-auto pb-4 w-content">{title}</h1>
-          <div className="mx-auto w-content flex items-center justify-between text-sm font-medium text-ink-400">
+          <h1 className="mx-auto pb-4 w-full md:w-content">{title}</h1>
+          <div className="mx-auto w-full md:w-content flex items-center justify-between text-sm font-medium text-ink-400">
             <div className="flex items-center space-x-2">
               <span>Tags:</span>
               <TagsLine tags={tags} />
@@ -48,7 +48,7 @@ const ContentLayout = ({
             </a>
           </div>
         </div>
-        <div className="mx-auto w-content leading-loose">
+        <div className="mx-auto w-full md:w-content leading-loose">
           {route === 'blog' && image && (
             <div className="my-4 aspect-[2/1] rounded overflow-hidden">
               <Image src={image} alt={title} width="768" height="384" />
