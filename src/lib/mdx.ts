@@ -153,6 +153,18 @@ export const getMdxFrontmatters = async (type: 'post' | 'note' = 'post') => {
   }
 }
 
+export const getAdjacentFrontmatters = async (
+  slug: string,
+  type: 'post' | 'note' = 'post',
+) => {
+  const { frontmatters } = await getMdxFrontmatters(type)
+  const postIndex = frontmatters.findIndex((fm) => fm.slug === slug)
+  return {
+    prev: frontmatters[postIndex - 1] ?? null,
+    next: frontmatters[postIndex + 1] ?? null,
+  }
+}
+
 export const getPostTags = async (): Promise<Tag[]> => {
   const { frontmatters } = await getMdxFrontmatters()
 
