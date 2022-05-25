@@ -27,6 +27,7 @@ const ContentLayout = ({
   },
   adjacents,
 }: ContentLayoutProps) => {
+  console.log(toc)
   return (
     <Layout title={title}>
       <article className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper">
