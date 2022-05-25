@@ -15,8 +15,8 @@ const Header = () => {
     <header className="relative text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 z-50">
       <div className="mx-auto py-4 sm:py-8 px-4 lg:px-0 w-full lg:w-wrapper flex items-center">
         <Link href="/">
-          <a className="flex items-center space-x-4 font-heading font-extrabold text-2xl md:text-3xl">
-            <Logo className="w-6 md:w-8 h-6 md:h-8" />
+          <a className="flex items-center space-x-2 sm:space-x-4 font-heading font-extrabold text-xl xs:text-2xl md:text-3xl">
+            <Logo className="w-4 xs:w-6 md:w-8" />
             <span>Jaden.Wu</span>
           </a>
         </Link>
@@ -42,7 +42,7 @@ const Header = () => {
         </nav>
         <DarkModeButton />
         <button className="p-2 block sm:hidden" onClick={toggleNav}>
-          <div className="relative w-6 h-4">
+          <div className="relative w-4 xs:w-6 h-3 xs:h-4">
             <span
               className={`absolute left-0 ${
                 navOpen ? 'top-1/2 rotate-45 -translate-y-1/2' : 'top-0'

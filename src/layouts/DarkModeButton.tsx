@@ -19,9 +19,9 @@ const DarkModeButton = () => {
       onClick={toggleDarkMode}
     >
       {darkModeEnabled ? (
-        <SunBright className="w-5 h-5" />
+        <SunBright className="w-4 xs:w-5 h-4 xs:h-5" />
       ) : (
-        <Moon className="w-5 h-5" />
+        <Moon className="w-4 xs:w-5 h-4 xs:h-5" />
       )}
     </button>
   )
