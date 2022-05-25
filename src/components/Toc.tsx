@@ -17,7 +17,7 @@ const Toc = ({ toc }: TocProps) => {
   return (
     <div className="my-4 p-4 bg-ink-100 dark:bg-ink-700 rounded">
       <button
-        className="flex items-center space-x-2 font-bold text-sm text-white"
+        className="flex items-center space-x-2 font-bold text-sm text-ink-800 dark:text-white"
         onClick={toggleToc}
       >
         <CaretDown
@@ -38,7 +38,7 @@ const Toc = ({ toc }: TocProps) => {
               style={{ marginLeft: `${(depth - 2) * 1}rem` }}
             >
               <Link href={`#${id}`}>
-                <a className="text-ink-300 hover:text-primary-400 hover:underline duration-75">
+                <a className="text-ink-600 dark:text-ink-300 hover:text-primary-500 dark:hover:text-primary-400 hover:underline duration-75">
                   {value}
                 </a>
               </Link>
