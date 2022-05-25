@@ -14,7 +14,7 @@ const Subscribe = () => {
         <p className="pt-6">
           Stay updated. Receive the latest stuff straight to your mailbox.
         </p>
-        <div className="mt-8 w-96 flex items-stretch">
+        <div className="mt-8 w-full sm:w-96 flex items-stretch">
           <input
             className="flex-1 px-4 bg-white dark:bg-ink-800 border-2 border-r-0 border-ink-200 dark:border-ink-500 rounded-tl rounded-bl outline-none"
             type="email"
