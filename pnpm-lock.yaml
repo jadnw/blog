@@ -17,6 +17,7 @@ specifiers:
   mdast-util-to-string: ^3.1.0
   mdx-bundler: ^9.0.1
   next: 12.1.6
+  next-themes: ^0.2.0
   postcss: ^8.4.14
   prettier: ^2.6.2
   prettier-plugin-tailwindcss: ^0.1.11
@@ -39,6 +40,7 @@ dependencies:
   mdast-util-to-string: 3.1.0
   mdx-bundler: 9.0.1_esbuild@0.14.39
   next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
+  next-themes: 0.2.0_2mgcgz5qhsdxw4fgpqzqeafmkq
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
   reading-time: 1.5.0
@@ -4399,6 +4401,18 @@ packages:
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
+
+  /next-themes/0.2.0_2mgcgz5qhsdxw4fgpqzqeafmkq:
+    resolution: {integrity: sha512-myhpDL4vadBD9YDSHiewqvzorGzB03N84e+3LxCwHRlM/hiBOaW+UsKsQojQAzC7fdcJA0l2ppveXcYaVV+hxQ==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+    dev: false
 
   /next/12.1.6_ef5jwxihqo6n7gxfmzogljlgcm:
     resolution: {integrity: sha512-cebwKxL3/DhNKfg9tPZDQmbRKjueqykHHbgaoG4VBRH3AHQJ2HO0dbKFiS1hPhe1/qgc2d/hFeadsbPicmLD+A==}
