@@ -38,14 +38,14 @@ const Home: NextPage = ({
           </p>
           <div className="flex items-center space-x-4">
             <Button text="Subscribe Me" href="/#subscribe" />
-            <Decor className="text-primary-300 dark:text-primary-500" />
+            <Decor className="hidden sm:block text-primary-300 dark:text-primary-500" />
           </div>
         </section>
-        <section className="mt-12 flex flex-col items-start">
+        <section className="mt-12 w-full flex flex-col items-start">
           <span className="w-1/2 h-0.5 block bg-ink-600 dark:bg-ink-400">
             &nbsp;
           </span>
-          <pre className="py-12 font-mono font-medium text-ink-600 dark:text-ink-200">
+          <pre className="py-12 whitespace-pre-wrap font-mono font-medium text-ink-600 dark:text-ink-200">
             <span className="text-purple-500 dark:text-purple-400">const</span>{' '}
             quote ={' '}
             <span className="text-green-500">
