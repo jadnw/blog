@@ -1,5 +1,6 @@
 export const ITEMS_PER_PAGE = 6
 export const GITHUB_REPO_URL = 'https://github.com/jadnw/blog/blob/main'
+import { GITHUB_REPO } from '@/lib/secrets'
 
 export const siteMetadata = {
   title: 'Jaden Wu ☆  Programming Blog',
@@ -22,7 +23,7 @@ export const siteMetadata = {
   comments: {
     url: 'https://utteranc.es/client.js',
     id: 'comments',
-    repo: process.env.NEXT_PUBLIC_REPO ?? 'jadnw/blog',
+    repo: GITHUB_REPO ?? 'jadnw/blog',
     issueTerm: 'pathname',
     label: 'Comments',
     theme: {
