@@ -27,7 +27,7 @@ const Toc = ({ toc }: TocProps) => {
       </button>
       <div
         className={`${
-          tocDropdown ? 'p-4 pt-0 h-auto' : 'p-0 h-0'
+          tocDropdown ? 'px-6 py-4 pt-0 h-auto' : 'p-0 h-0'
         } overflow-hidden`}
       >
         <ul>
