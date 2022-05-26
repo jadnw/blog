@@ -1,3 +1,4 @@
-export const GITHUB_REPO = process.env.NEXT_PUBLIC_REPO
+export const GITHUB_REPO = process.env.NEXT_PUBLIC_GITHUB_REPO
+
 export const SENDINBLUE_ENDPOINT = process.env.NEXT_PUBLIC_SENDINBLUE_ENDPOINT
 export const SENDINBLUE_API_KEY = process.env.NEXT_PUBLIC_SENDINBLUE_API_KEY
