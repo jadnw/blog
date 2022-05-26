@@ -2,7 +2,9 @@ import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
 import Anchor from '@/components/mdx/Anchor'
+import Code from '@/components/mdx/Code'
 import CodeTitle from '@/components/mdx/CodeTitle'
+import Em from '@/components/mdx/Em'
 import Img from '@/components/mdx/Img'
 import Pre from '@/components/mdx/Pre'
 import Paragraph from '@/components/mdx/Paragraph'
@@ -16,7 +18,9 @@ const components = {
   p: Paragraph,
   ul: Ul,
   a: Anchor,
+  code: Code,
   pre: Pre,
+  em: Em,
   div: (props: any) =>
     props.className === 'rehype-code-title' ? (
       <CodeTitle {...props} />
