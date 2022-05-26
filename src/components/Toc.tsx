@@ -15,9 +15,9 @@ const Toc = ({ toc }: TocProps) => {
   }
 
   return (
-    <div className="my-4 p-4 bg-ink-100 dark:bg-ink-700 rounded">
+    <div className="my-4 bg-ink-100 dark:bg-ink-700 rounded">
       <button
-        className="flex items-center space-x-2 font-bold text-sm text-ink-800 dark:text-white"
+        className="w-full px-4 py-2 flex items-center space-x-2 font-bold text-sm text-ink-800 dark:text-white"
         onClick={toggleToc}
       >
         <CaretDown
@@ -27,7 +27,7 @@ const Toc = ({ toc }: TocProps) => {
       </button>
       <div
         className={`${
-          tocDropdown ? 'mt-4 h-auto' : 'mt-0 h-0'
+          tocDropdown ? 'p-4 pt-0 h-auto' : 'p-0 h-0'
         } overflow-hidden`}
       >
         <ul>
