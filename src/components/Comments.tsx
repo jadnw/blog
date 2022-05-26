@@ -42,8 +42,15 @@ const Comments = () => {
     loadComments()
   }, [loadComments])
   return (
-    <div className="py-12 text-center text-ink-700 dark:text-ink-300">
-      {enabled && <button onClick={loadComments}>Load Comments</button>}
+    <div className="py-12 text-center text-ink-600 dark:text-ink-300">
+      {enabled && (
+        <button
+          className="font-semibold hover:text-primary-500 dark:hover:text-primary-400"
+          onClick={loadComments}
+        >
+          Load Comments
+        </button>
+      )}
       <div
         className="utterances-frame relative"
         id={siteMetadata.comments.id}

@@ -28,7 +28,7 @@ export const siteMetadata = {
     label: 'Comments',
     theme: {
       light: 'github-light',
-      dark: 'github-dark',
+      dark: 'dark-blue',
     },
   },
 }
