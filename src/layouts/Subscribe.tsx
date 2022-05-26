@@ -25,6 +25,7 @@ const Subscribe = () => {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
     if (!regex.test(email) && email !== '') {
+      setLoading(false)
       setError(true)
       setMessage('Your email is invalid!')
       return
@@ -46,6 +47,7 @@ const Subscribe = () => {
     const { error } = await res.json()
 
     if (error) {
+      setLoading(false)
       setError(true)
       setMessage('Your email is already subscribed!')
       return
@@ -83,7 +85,10 @@ const Subscribe = () => {
             onChange={onEmailInputChange}
             disabled={registered}
           />
-          <button className="px-4 xs:px-6 py-2.5 text-white dark:text-ink-800 bg-ink-600 dark:bg-white rounded-tr rounded-br">
+          <button
+            className="px-4 xs:px-6 py-2.5 text-white dark:text-ink-800 bg-ink-600 dark:bg-white rounded-tr rounded-br"
+            disabled={loading}
+          >
             {loading ? (
               <SpinnerThird className="w-4 xs:w-4 h-4 xs:h-5 animate-spin" />
             ) : (
