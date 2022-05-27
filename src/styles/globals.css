@@ -25,6 +25,10 @@
     src: url('../assets/fonts/Iosevka-Medium-Italic.ttf') format("truetype");
     font-style: italic;
   }
+
+  button, input {
+    @apply outline-none
+  }
 }
 
 html {

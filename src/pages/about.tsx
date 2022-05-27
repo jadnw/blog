@@ -12,8 +12,20 @@ const About: NextPage = () => (
       <h3 className="mt-12 text-xl font-bold">Me, Myself and I</h3>
       <p className="mt-2">
         Hey, I&apos;m Jay 😉. To get to know more about me, you can visit{' '}
-        <a href={siteMetadata.portfolio}>my portfolio</a> or{' '}
-        <a href={siteMetadata.github}>Github profile</a> 🤩.
+        <a
+          className="text-primary-500 dark:text-primary-400 hover:underline"
+          href={siteMetadata.portfolio}
+        >
+          my portfolio
+        </a>{' '}
+        or{' '}
+        <a
+          className="text-primary-500 dark:text-primary-400 hover:underline"
+          href={siteMetadata.github}
+        >
+          Github profile
+        </a>{' '}
+        🤩.
       </p>
       <h3 className="mt-12 text-xl font-bold">About This Blog</h3>
       <p className="mt-2">
