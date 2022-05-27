@@ -17,6 +17,7 @@ export const siteMetadata = {
   repo: 'https://github.com/jadnw/blog',
   logo: '/favicon.ico',
   email: 'jadenwu137@protonmail.com',
+  portfolio: 'https://jadnw.github.io',
   twitter: 'https://twitter.com/jadnw',
   github: 'https:/github.com/jadnw',
   locale: 'en-US',
