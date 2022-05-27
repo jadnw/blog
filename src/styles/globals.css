@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: Iosevka;
+    font-weight: 400;
+    src: url('../assets/fonts/Iosevka.ttf') format("truetype");
+  }
+  @font-face {
+    font-family: Iosevka;
+    font-weight: 400;
+    src: url('../assets/fonts/Iosevka-Italic.ttf') format("truetype");
+    font-style: italic;
+  }
+  @font-face {
+    font-family: Iosevka;
+    font-weight: 500;
+    src: url('../assets/fonts/Iosevka-Medium.ttf') format("truetype");
+  }
+  @font-face {
+    font-family: Iosevka;
+    font-weight: 500;
+    src: url('../assets/fonts/Iosevka-Medium-Italic.ttf') format("truetype");
+    font-style: italic;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
