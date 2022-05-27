@@ -37,7 +37,7 @@ module.exports = {
         800: 'hsl(200, 14%, 11%)',
         900: 'hsl(210, 11%, 7%)',
       },
-      primary: colors.cyan,
+      primary: colors.teal,
       purple: colors.violet,
       green: colors.emerald,
       blue: colors.sky,
