@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       heading: ['Glory', 'sans-serif'],
-      sans: ['Krub', 'sans-serif'],
+      sans: ['Vazirmatn', 'sans-serif'],
       mono: ['Iosevka', 'monospace'],
     },
     screens: {
