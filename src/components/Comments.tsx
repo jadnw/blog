@@ -1,10 +1,9 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
 
 import { siteMetadata } from '@/lib/config'
 
 const Comments = () => {
-  const [enabled, setEnabled] = useState(true)
   const { theme, resolvedTheme } = useTheme()
   const commentsTheme =
     theme === 'dark' || resolvedTheme === 'dark'
@@ -12,16 +11,29 @@ const Comments = () => {
       : siteMetadata.comments.theme.light
 
   const loadComments = useCallback(() => {
-    setEnabled(false)
-
     const comments = document.getElementById(siteMetadata.comments.id)
     if (comments) comments.innerHTML = ''
     const script = document.createElement('script')
-    ;(script.src = siteMetadata.comments.url),
-      script.setAttribute('repo', siteMetadata.comments.repo)
-    script.setAttribute('issue-term', siteMetadata.comments.issueTerm)
-    script.setAttribute('label', siteMetadata.comments.label)
-    script.setAttribute('theme', commentsTheme)
+    script.src = siteMetadata.comments.url
+    script.setAttribute('data-repo', siteMetadata.comments.repo!)
+    script.setAttribute('data-repo-id', siteMetadata.comments.repoId!)
+    script.setAttribute('data-category', siteMetadata.comments.category!)
+    script.setAttribute('data-category-id', siteMetadata.comments.categoryId!)
+    script.setAttribute('data-mapping', siteMetadata.comments.mapping)
+    script.setAttribute(
+      'data-reactions-enabled',
+      siteMetadata.comments.reactionsEnabled ? '1' : '0',
+    )
+    script.setAttribute(
+      'data-emit-metadata',
+      siteMetadata.comments.emitMetadata ? '1' : '0',
+    )
+    script.setAttribute(
+      'data-input-position',
+      siteMetadata.comments.inputPosition,
+    )
+    script.setAttribute('data-theme', commentsTheme)
+    script.setAttribute('data-lang', siteMetadata.comments.lang)
     script.setAttribute('crossorigin', 'anonymous')
     script.async = true
 
@@ -37,24 +49,11 @@ const Comments = () => {
   }, [commentsTheme])
 
   useEffect(() => {
-    const iframe = document.querySelector('iframe.utterances-frame')
-    if (!iframe) return
     loadComments()
   }, [loadComments])
   return (
     <div className="py-12 text-center text-ink-600 dark:text-ink-300">
-      {enabled && (
-        <button
-          className="font-semibold hover:text-primary-500 dark:hover:text-primary-400"
-          onClick={loadComments}
-        >
-          Load Comments
-        </button>
-      )}
-      <div
-        className="utterances-frame relative"
-        id={siteMetadata.comments.id}
-      />
+      <div className="giscus-frame relative" id={siteMetadata.comments.id} />
     </div>
   )
 }

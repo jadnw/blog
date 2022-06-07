@@ -1,6 +1,11 @@
 export const ITEMS_PER_PAGE = 6
 export const GITHUB_REPO_URL = 'https://github.com/jadnw/blog/blob/main'
-import { GITHUB_REPO } from '@/lib/secrets'
+import {
+  GITHUB_REPO,
+  GITHUB_REPO_ID,
+  GITHUB_DISCUSSION_CATEGORY,
+  GITHUB_DISCUSSION_CATEGORY_ID,
+} from '@/lib/secrets'
 
 export const siteMetadata = {
   title: 'Jaden Wu ☆  Programming Blog',
@@ -22,14 +27,20 @@ export const siteMetadata = {
   github: 'https:/github.com/jadnw',
   locale: 'en-US',
   comments: {
-    url: 'https://utteranc.es/client.js',
+    url: 'https://giscus.app/client.js',
     id: 'comments',
-    repo: GITHUB_REPO ?? 'jadnw/blog',
-    issueTerm: 'pathname',
-    label: 'Comments',
+    repo: GITHUB_REPO,
+    repoId: GITHUB_REPO_ID,
+    category: GITHUB_DISCUSSION_CATEGORY,
+    categoryId: GITHUB_DISCUSSION_CATEGORY_ID,
+    mapping: 'pathname',
+    reactionsEnabled: true,
+    emitMetadata: false,
+    inputPosition: 'bottom',
+    lang: 'en',
     theme: {
-      light: 'github-light',
-      dark: 'dark-blue',
+      light: 'light',
+      dark: 'transparent_dark',
     },
   },
 }
