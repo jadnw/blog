@@ -10,7 +10,19 @@ module.exports = {
   theme: {
     fontFamily: {
       heading: ['Glory', 'sans-serif'],
-      sans: ['Vazirmatn', 'sans-serif'],
+      sans: [
+        'Fira Sans',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Helvetica',
+        'Arial',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+      ],
       mono: ['Iosevka', 'monospace'],
     },
     screens: {
