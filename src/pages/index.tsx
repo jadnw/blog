@@ -74,12 +74,12 @@ const Home: NextPage = ({
             </span>
             <br />
             console.<span className="text-blue-600">log</span>
-            (`”$&#123;quote&#125;” -- by $$&#123;author&#125; on
-            $$&#123;book&#125;.`)
+            (`”$&#123;quote&#125;” -- from $&#123;book&#125; by
+            $&#123;author&#125;.`)
             <br />
             <br />
             <span className="text-primary-500">$</span> “It is not enough for
-            code to work” -- by Robert C. Martin on Clean Code.
+            code to work” -- from Clean Code by Robert C. Martin.
           </pre>
           <span className="self-end w-1/2 h-0.5 block bg-ink-600 dark:bg-ink-400">
             &nbsp;
