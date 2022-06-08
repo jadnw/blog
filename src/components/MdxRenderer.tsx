@@ -3,6 +3,7 @@ import { getMDXComponent } from 'mdx-bundler/client'
 
 import Anchor from '@/components/mdx/Anchor'
 import Code from '@/components/mdx/Code'
+import CodeSandbox from '@/components/mdx/CodeSandbox'
 import CodeTitle from '@/components/mdx/CodeTitle'
 import Em from '@/components/mdx/Em'
 import Img from '@/components/mdx/Img'
@@ -30,6 +31,7 @@ const components = {
     ),
   img: (props: any) => <Img {...props} />,
   Youtube,
+  CodeSandbox,
 }
 
 const MdxRenderer = ({ code }: { code: string }) => {

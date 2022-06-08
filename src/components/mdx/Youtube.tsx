@@ -3,9 +3,9 @@ interface YoutubeProps {
   title?: string
 }
 
-const Youtube = ({ id, title = 'Youtube Video' }) => (
+const Youtube = ({ id, title = 'Youtube Video' }: YoutubeProps) => (
   <iframe
-    className="w-full aspect-[16/9]"
+    className="py-4 w-full aspect-[16/9]"
     src={`https://www.youtube.com/embed/${id}`}
     title={title}
     frameBorder="0"
