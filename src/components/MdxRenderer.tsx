@@ -10,6 +10,7 @@ import Pre from '@/components/mdx/Pre'
 import Paragraph from '@/components/mdx/Paragraph'
 import Typo from '@/components/mdx/Typo'
 import Ul from '@/components/mdx/Ul'
+import Youtube from '@/components/mdx/Youtube'
 
 const components = {
   h1: (props: any) => <Typo as="h1" {...props} />,
@@ -28,6 +29,7 @@ const components = {
       <div {...props} />
     ),
   img: (props: any) => <Img {...props} />,
+  Youtube,
 }
 
 const MdxRenderer = ({ code }: { code: string }) => {
