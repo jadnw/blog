@@ -10,7 +10,7 @@ const Footer = () => (
           <Logo className="w-6 h-6" />
         </a>
       </Link>
-      <span className="text-sm xs:text-base text-ink-500 dark:text-ink-300">
+      <span className="text-base text-ink-600 dark:text-ink-200">
         Created by Jaden Wu with 🔥 &bull; &copy; 2022
       </span>
     </div>

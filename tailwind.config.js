@@ -11,7 +11,7 @@ module.exports = {
     fontFamily: {
       heading: ['Glory', 'sans-serif'],
       sans: [
-        'Fira Sans',
+        'Barlow Semi Condensed',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',

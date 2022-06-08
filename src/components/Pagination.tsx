@@ -15,7 +15,7 @@ const Pagination = ({
   return (
     <div className="flex flex-col">
       <span className="block w-7/12 h-px bg-ink-100 dark:bg-ink-700"></span>
-      <div className="py-2 flex items-center justify-between text-sm font-semibold">
+      <div className="py-2 flex items-center justify-between text-lg font-semibold">
         <Link href={`/${route}/page/${page > 1 ? page - 1 : 1}`}>
           <a
             className={`${

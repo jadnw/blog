@@ -1,7 +1,7 @@
 const headingFontSizes = {
-  h1: 'text-2xl md:text-3xl',
-  h2: 'text-xl md:text-2xl',
-  h3: 'text-base md:text-xl',
+  h1: 'text-3xl md:text-4xl',
+  h2: 'text-2xl md:text-3xl',
+  h3: 'text-lg md:text-2xl',
 }
 
 interface TypoProps {

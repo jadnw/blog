@@ -12,7 +12,7 @@ const About: NextPage = () => (
       <Typography text="About" />
       <div className="flex items-center space-x-16">
         <div className="py-12">
-          <h3 className="text-xl font-bold">Me, Myself and I</h3>
+          <h3 className="text-2xl font-bold">Me, Myself and I</h3>
           <p className="mt-2">
             Hey, I&apos;m Jay 😉. To get to know more about me, you can visit{' '}
             <a
@@ -30,7 +30,7 @@ const About: NextPage = () => (
             </a>{' '}
             🤩.
           </p>
-          <h3 className="mt-8 text-xl font-bold">About This Blog</h3>
+          <h3 className="mt-8 text-2xl font-bold">About This Blog</h3>
           <p className="mt-2">
             This blog has been created by me as my personal programming blog.
             You can find many contents about Web Developement as well as
