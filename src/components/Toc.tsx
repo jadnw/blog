@@ -15,7 +15,7 @@ const Toc = ({ toc }: TocProps) => {
   }
 
   return (
-    <div className="my-4 bg-ink-100 dark:bg-ink-700 rounded">
+    <div id="toc" className="my-4 bg-ink-100 dark:bg-ink-700 rounded">
       <button
         className="w-full px-4 py-2 flex items-center space-x-2 font-bold text-base text-ink-800 dark:text-white"
         onClick={toggleToc}

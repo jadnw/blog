@@ -6,6 +6,7 @@ import Toc from '@/components/Toc'
 import MdxRenderer from '@/components/MdxRenderer'
 import AdjacentsNav from '@/components/AdjacentsNav'
 import Comments from '@/components/Comments'
+import NavButtons from '@/components/NavButtons'
 
 import type { Adjacents, MDXPost } from '../types'
 import { formatDate } from '@/lib/utils'
@@ -67,6 +68,7 @@ const ContentLayout = ({
         <Comments />
       </div>
     </article>
+    <NavButtons />
   </Layout>
 )
 
