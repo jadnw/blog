@@ -18,24 +18,20 @@ const Pagination = ({
       <div className="py-2 flex items-center justify-between text-sm font-medium">
         <Link href={`/${route}/page/${page > 1 ? page - 1 : 1}`}>
           <a
-            className={`${
-              page > 1
-                ? 'text-primary-500'
-                : 'text-ink-400 line-through pointer-events-none'
+            className={`px-6 py-1 hover:text-white dark:hover:text-ink-800 hover:bg-secondary-500 hover:dark:bg-primary-400 border border-secondary-500 dark:border-primary-400 rounded ${
+              page > 1 ? '' : 'line-through pointer-events-none'
             }`}
           >
             Prev
           </a>
         </Link>
-        <span>
+        <span className="font-medium">
           Page {page} of {totalPages}
         </span>
         <Link href={`/${route}/page/${page < totalPages ? page + 1 : page}`}>
           <a
-            className={`${
-              page < totalPages
-                ? 'text-primary-500'
-                : 'text-ink-400 line-through pointer-events-none'
+            className={`px-6 py-1 hover:text-white dark:hover:text-ink-800 hover:bg-secondary-500 hover:dark:bg-primary-400 border border-secondary-500 dark:border-primary-400 rounded ${
+              page < totalPages ? '' : 'line-through pointer-events-none'
             }`}
           >
             Next

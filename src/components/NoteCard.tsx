@@ -30,7 +30,7 @@ const NoteCard = ({
       <div className="flex items-center justify-between text-sm">
         <span className="text-ink-500 dark:text-ink-400">{readingTime}</span>
         <Link href={`/notes/${slug}`}>
-          <a className="font-semibold hover:text-primary-500 dark:hover:text-primary-400 duration-100">
+          <a className="font-semibold hover:text-secondary-500 dark:hover:text-primary-400 hover:underline duration-100">
             Read More &rarr;
           </a>
         </Link>
