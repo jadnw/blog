@@ -15,20 +15,27 @@ const Toc = ({ toc }: TocProps) => {
   }
 
   return (
-    <div id="toc" className="my-4 bg-ink-100 dark:bg-ink-700 rounded">
+    <div
+      id="toc"
+      className="my-4 flex flex-col border border-ink-200 dark:border-ink-700 rounded overflow-hidden"
+    >
       <button
-        className="w-full px-4 py-2 flex items-center space-x-2 font-bold text-base text-ink-800 dark:text-white"
+        className={`w-full px-4 py-2 flex items-center space-x-2 font-bold text-sm duration-100 ${
+          tocDropdown
+            ? 'text-white dark:text-ink-600 bg-ink-700 dark:bg-white'
+            : ''
+        }`}
         onClick={toggleToc}
       >
         <CaretDown
-          className={`w-5 h-5 ${tocDropdown ? 'rotate-180' : ''} duration-200`}
+          className={`w-4 h-4 ${tocDropdown ? 'rotate-180' : ''} duration-200`}
         />
         <span>Table of Contents</span>
       </button>
       <div
         className={`${
-          tocDropdown ? 'px-6 py-4 pt-0 h-auto' : 'p-0 h-0'
-        } overflow-hidden leading-relaxed`}
+          tocDropdown ? 'px-6 py-4 h-full' : 'p-0 h-0'
+        } overflow-hidden leading-loose`}
       >
         <ul>
           {toc.map(({ value, id, depth }) => (

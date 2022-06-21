@@ -24,7 +24,7 @@ const Header = () => {
     <header className="relative text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 z-50">
       <div className="mx-auto py-4 sm:py-8 px-4 lg:px-0 w-full lg:w-wrapper flex items-center">
         <Link href="/">
-          <a className="flex items-center space-x-2 sm:space-x-4 font-heading font-extrabold text-2xl xs:text-2xl md:text-3xl">
+          <a className="flex items-center space-x-2 sm:space-x-4 font-heading font-extrabold text-xl xs:text-2xl md:text-3xl">
             <Logo className="w-4 xs:w-6 md:w-8" />
             <span>{siteMetadata.logoText}</span>
           </a>
@@ -32,7 +32,7 @@ const Header = () => {
         <nav
           className={`absolute sm:relative top-full ml-0 sm:ml-auto w-full sm:w-auto ${
             navOpen ? 'left-0' : '-left-full sm:left-0'
-          } h-screen sm:h-auto font-sans font-medium text-xl xs:text-2xl sm:text-lg bg-white dark:bg-ink-900 dark:sm:bg-ink-800 overflow-hidden duration-200`}
+          } h-screen sm:h-auto font-sans font-medium text-xl xs:text-2xl sm:text-base bg-white dark:bg-ink-900 dark:sm:bg-ink-800 overflow-hidden duration-200`}
         >
           <ul className="flex flex-col sm:flex-row items-center">
             <li>

@@ -11,11 +11,10 @@ module.exports = {
     fontFamily: {
       heading: ['Glory', 'sans-serif'],
       sans: [
-        'Barlow Semi Condensed',
+        'Roboto',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',
-        'Roboto',
         'Helvetica',
         'Arial',
         'sans-serif',

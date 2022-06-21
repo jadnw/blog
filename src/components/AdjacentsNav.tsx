@@ -14,7 +14,7 @@ const AdjacentsNav = ({
   route,
   adjacents: { prev, next },
 }: AdjacentsNavProps) => (
-  <div className="mt-16 py-2 flex flex-col items-start border-t border-b border-ink-400 text-ink-600 dark:text-ink-400 text-base leading-normal">
+  <div className="mt-16 py-2 flex flex-col items-start border-t border-b border-ink-400 text-ink-600 dark:text-ink-400 text-sm leading-normal">
     {prev && (
       <div className="flex items-center space-x-2">
         <Link href={`/${route}/${prev.slug}`}>
