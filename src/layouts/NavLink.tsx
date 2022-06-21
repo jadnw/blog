@@ -14,11 +14,11 @@ const NavLink = ({ href, exact = false, children }: NavLinkProps) => {
   return (
     <Link href={href}>
       <a
-        className={`px-3 py-4 sm:py-1 border-b-2 ${
+        className={`px-4 py-4 sm:py-1 ${
           active
-            ? ' text-primary-500 dark:text-primary-400 border-primary-500 dark:border-primary-400'
-            : 'border-transparent'
-        } block`}
+            ? ' text-white dark:text-ink-800 bg-secondary-500 dark:bg-primary-400'
+            : 'bg-transparent'
+        } block text-center sm:text-left rounded-none sm:rounded`}
       >
         {children}
       </a>

@@ -13,7 +13,7 @@ const TagItem = ({ tag: { label, numOfPosts } }: TagItemProps) => (
   <div>
     <Link href={`/tags/${label}`}>
       <a className="hover:underline">
-        <span className="text-primary-500 dark:text-primary-400">
+        <span className="text-secondary-500 dark:text-primary-400">
           # {label}
         </span>{' '}
       </a>

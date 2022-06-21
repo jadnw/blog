@@ -4,7 +4,7 @@ interface TypographyProps {
 }
 
 const Typography = ({ text, children }: TypographyProps) => (
-  <div className="pb-4 flex items-end justify-between border-b border-ink-500 space-x-4">
+  <div className="pb-2 flex items-end justify-between border-b border-ink-300 dark:border-ink-500 space-x-4">
     <h1 className="font-heading text-2xl xs:text-3xl sm:text-4xl font-bold">
       {text}
     </h1>

@@ -43,7 +43,7 @@ const Tags: NextPage = ({
 
   return (
     <Layout title="Tags">
-      <section className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper">
+      <section className="mx-auto py-16 px-4 lg:px-0 w-full lg:w-wrapper">
         <Typography text="Tags">
           <SearchField
             placeholder="Search tags ..."

@@ -21,10 +21,10 @@ const Header = () => {
   }, [navOpen])
 
   return (
-    <header className="relative text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 z-50">
+    <header className="relative text-ink-600 dark:text-ink-200 bg-white dark:bg-ink-800 z-50 border-b sm:border-b-0 border-ink-100 dark:border-ink-700">
       <div className="mx-auto py-4 sm:py-8 px-4 lg:px-0 w-full lg:w-wrapper flex items-center">
         <Link href="/">
-          <a className="flex items-center space-x-2 sm:space-x-4 font-heading font-extrabold text-xl xs:text-2xl md:text-3xl">
+          <a className="flex items-center space-x-1 sm:space-x-2 font-heading font-extrabold text-xl xs:text-2xl md:text-3xl">
             <Logo className="w-4 xs:w-6 md:w-8" />
             <span>{siteMetadata.logoText}</span>
           </a>
@@ -32,9 +32,9 @@ const Header = () => {
         <nav
           className={`absolute sm:relative top-full ml-0 sm:ml-auto w-full sm:w-auto ${
             navOpen ? 'left-0' : '-left-full sm:left-0'
-          } h-screen sm:h-auto font-sans font-medium text-xl xs:text-2xl sm:text-base bg-white dark:bg-ink-900 dark:sm:bg-ink-800 overflow-hidden duration-200`}
+          } h-screen sm:h-auto font-sans font-medium text-lg xs:text-xl sm:text-base bg-white dark:bg-ink-900 dark:sm:bg-ink-800 overflow-hidden duration-200`}
         >
-          <ul className="flex flex-col sm:flex-row items-center">
+          <ul className="flex flex-col sm:flex-row items-stretch divide-y sm:divide-y-0 divide-ink-100 dark:divide-ink-700">
             <li>
               <NavLink href="/blog">Blog</NavLink>
             </li>

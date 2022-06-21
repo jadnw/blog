@@ -29,7 +29,7 @@ const ContentLayout = ({
   adjacents,
 }: ContentLayoutProps) => (
   <Layout title={title}>
-    <article className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper">
+    <article className="mx-auto py-16 px-4 lg:px-0 w-full lg:w-wrapper">
       <div className="pb-4 text-center font-bold text-xl xs:text-2xl sm:text-3xl border-b border-ink-200 dark:border-ink-600">
         <h1 className="mx-auto pb-4 w-full md:w-content">{title}</h1>
         <div className="mx-auto w-full md:w-content grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-0 sm:flex sm:items-center sm:justify-between text-sm font-medium text-ink-400 text-left">

@@ -8,7 +8,7 @@ import { siteMetadata } from '@/lib/config'
 
 const About: NextPage = () => (
   <Layout title="About">
-    <section className="mx-auto py-12 px-4 lg:px-0 w-full lg:w-wrapper leading-loose">
+    <section className="mx-auto py-16 px-4 lg:px-0 w-full lg:w-wrapper leading-loose">
       <Typography text="About" />
       <div className="flex items-center space-x-16">
         <div className="py-12">
@@ -16,14 +16,14 @@ const About: NextPage = () => (
           <p className="mt-2">
             Hey, I&apos;m Jay 😉. To get to know more about me, you can visit{' '}
             <a
-              className="text-primary-500 dark:text-primary-400 hover:underline"
+              className="text-secondary-500 dark:text-primary-400 hover:underline"
               href={siteMetadata.portfolio}
             >
               my portfolio
             </a>{' '}
             or{' '}
             <a
-              className="text-primary-500 dark:text-primary-400 hover:underline"
+              className="text-secondary-500 dark:text-primary-400 hover:underline"
               href={siteMetadata.github}
             >
               Github profile

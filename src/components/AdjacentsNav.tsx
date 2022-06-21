@@ -14,11 +14,11 @@ const AdjacentsNav = ({
   route,
   adjacents: { prev, next },
 }: AdjacentsNavProps) => (
-  <div className="mt-16 py-2 flex flex-col items-start border-t border-b border-ink-400 text-ink-600 dark:text-ink-400 text-sm leading-normal">
+  <div className="mt-16 py-2 flex flex-col items-start border-t border-b border-ink-300 dark:border-ink-600 text-ink-600 dark:text-ink-300 text-sm leading-normal">
     {prev && (
       <div className="flex items-center space-x-2">
         <Link href={`/${route}/${prev.slug}`}>
-          <a className="py-1 flex items-center font-medium hover:underline hover:text-ink-900 dark:hover:text-white duration-75">
+          <a className="py-1 flex items-center font-medium hover:underline hover:text-secondary-500 dark:hover:text-primary-400 duration-75">
             <ArrowLeft className="w-4 h-4" />
             <span className="ml-2">{prev.title}</span>
           </a>
@@ -39,7 +39,7 @@ const AdjacentsNav = ({
           ({next.readingTime})
         </span>
         <Link href={`/${route}/${next.slug}`}>
-          <a className="py-1 flex items-center font-medium hover:underline hover:text-ink-900 dark:hover:text-white duration-75">
+          <a className="py-1 flex items-center font-medium hover:underline hover:text-secondary-500 dark:hover:text-primary-400 duration-75">
             <span className="mr-2">{next.title}</span>
             <ArrowRight className="w-4 h-4" />
           </a>

@@ -13,7 +13,7 @@ const Tag = ({ tag }: { tag: string }) => (
 
 const TagsLine = ({ tags, disabled = false }: TagsLineProps) => (
   <div
-    className={`flex items-center space-x-2 font-semibold text-primary-500 dark:text-primary-400 ${
+    className={`flex items-center space-x-2 font-semibold text-secondary-500 dark:text-primary-400 ${
       disabled ? 'pointer-events-none' : ''
     }`}
   >
