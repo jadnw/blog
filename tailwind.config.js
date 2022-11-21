@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'Noto Sans Display',
+        'var(--font-noto-sans-display)',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',
@@ -20,6 +20,10 @@ module.exports = {
         'Apple Color Emoji',
         'Segoe UI Emoji',
         'Segoe UI Symbol',
+      ],
+      mono: [
+        'var(--font-jetka)',
+        'monospace',
       ],
     },
     fontSize: {
