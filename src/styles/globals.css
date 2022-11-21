@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-base font-sans text-ink-600 bg-white overflow-x-hidden dark:text-ink-300 dark:bg-ink-900;
+  }
+
+  input,
+  button,
+  select {
+    @apply outline-0 focus:outline-0;
+  }
+
+  h1, h2, h3, h4, h5, h6, h7 {
+    @apply font-bold;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
