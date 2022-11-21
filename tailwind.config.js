@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'Roboto',
+        'Noto Sans Display',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',
