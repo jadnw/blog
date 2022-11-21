@@ -1,8 +1,12 @@
+import mdx from 'lib/mdx'
+import { PostType } from 'shared/enums'
+
 export default function Home() {
+  const frontmatters = mdx.paginateFrontmatters(PostType.Post)
   return (
     <div>
-      This is home page
-      <code className="font-mono">This is code with monospace font</code>
+      {JSON.stringify(frontmatters)}
+      {JSON.stringify(mdx.getCountTags())}
     </div>
   )
 }
