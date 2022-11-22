@@ -12,7 +12,7 @@ export interface PostCardProps {
 }
 
 const PostCard = ({ frontmatter }: PostCardProps) => {
-  const href = `${frontmatter.type === Category.Post ? '/posts' : '/notes'}/${frontmatter.slug}`
+  const href = `${frontmatter.category === Category.Post ? '/posts' : '/notes'}/${frontmatter.slug}`
 
   return (
     <div className="flex items-center space-x-8 py-12">
@@ -31,9 +31,9 @@ const PostCard = ({ frontmatter }: PostCardProps) => {
             <Link href={href}>{frontmatter.excerpt}</Link>
           </p>
         </div>
-        <Tags type={frontmatter.type} tags={frontmatter.tags} />
+        <Tags category={frontmatter.category} tags={frontmatter.tags} />
       </div>
-      {frontmatter.type === Category.Post && frontmatter.cover ? (
+      {frontmatter.category === Category.Post && frontmatter.cover ? (
         <Link href={href} className="relative aspect-[16/9] w-5/12 overflow-hidden rounded">
           <Image
             src={frontmatter.cover}

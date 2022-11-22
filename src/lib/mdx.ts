@@ -39,8 +39,8 @@ const getSlug = (path: string): string => {
   return slug
 }
 
-const getFrontmatters = (type: Category): IFrontMatter[] => {
-  const directory = SOURCES[type]
+const getFrontmatters = (category: Category): IFrontMatter[] => {
+  const directory = SOURCES[category]
   const paths = getMdxFiles(directory)
 
   const frontmatters = paths
@@ -48,7 +48,7 @@ const getFrontmatters = (type: Category): IFrontMatter[] => {
       const source = fs.readFileSync(p, 'utf8')
       const { data, content } = matter(source)
       return {
-        type,
+        category,
         id: data.id,
         slug: getSlug(p),
         title: data.title,
@@ -65,8 +65,8 @@ const getFrontmatters = (type: Category): IFrontMatter[] => {
   return frontmatters
 }
 
-const paginateFrontmatters = (type: Category, page = 1): IPaginate<IFrontMatter> => {
-  const frontmatters = getFrontmatters(type)
+const paginateFrontmatters = (category: Category, page = 1): IPaginate<IFrontMatter> => {
+  const frontmatters = getFrontmatters(category)
   const pageSize = config.pageSize
   const count = frontmatters.length
   const pagesCount = Math.ceil(count / pageSize)
@@ -84,8 +84,8 @@ const paginateFrontmatters = (type: Category, page = 1): IPaginate<IFrontMatter>
   }
 }
 
-const paginateFrontmattersByTag = (type: Category, tag: string, page = 1) => {
-  const frontmatters = getFrontmatters(type).filter((fm) => fm.tags.includes(tag))
+const paginateFrontmattersByTag = (category: Category, tag: string, page = 1) => {
+  const frontmatters = getFrontmatters(category).filter((fm) => fm.tags.includes(tag))
   const pageSize = config.pageSize
   const count = frontmatters.length
   const pagesCount = Math.ceil(count / pageSize)
@@ -105,8 +105,8 @@ const paginateFrontmattersByTag = (type: Category, tag: string, page = 1) => {
 
 export type CountTags = { name: string; count: number }[]
 
-const getCountTagsByCategory = (type: Category): CountTags => {
-  const frontmatters = getFrontmatters(type)
+const getCountTagsByCategory = (category: Category): CountTags => {
+  const frontmatters = getFrontmatters(category)
 
   const tags = frontmatters
     .reduce((accTags: string[], fm) => [...accTags, ...fm.tags], [])
@@ -130,8 +130,8 @@ const getCountTags = (): { post: CountTags; note: CountTags } => {
   }
 }
 
-const getSingleMdxBySlug = async (type: Category, slug: string): Promise<IPost> => {
-  const directory = SOURCES[type]
+const getSingleMdxBySlug = async (category: Category, slug: string): Promise<IPost> => {
+  const directory = SOURCES[category]
   const filepath = path.join(directory, `${slug}.mdx`)
   const source = fs.readFileSync(filepath, 'utf8')
 
@@ -152,7 +152,7 @@ const getSingleMdxBySlug = async (type: Category, slug: string): Promise<IPost> 
 
   return {
     frontmatter: {
-      type,
+      category,
       id: frontmatter.id,
       slug,
       title: frontmatter.title,

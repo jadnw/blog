@@ -13,8 +13,8 @@ const PaginatePostsByTag = async ({ params: { tag, page } }: PaginatePostsByTagP
     <>
       {/* @ts-expect-error Server Component */}
       <PostListLayout
-        type={Category.Post}
-        title={`Post Tag: ${tag}`}
+        category={Category.Post}
+        title={`Tag: ${tag}`}
         tag={tag}
         page={Number(page)}
       />

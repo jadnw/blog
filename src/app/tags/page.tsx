@@ -10,11 +10,11 @@ const TagList = async () => {
     <div className="mx-auto w-wrapper space-y-24 py-24">
       <div className="space-y-8">
         <Typo text="Post Tags" />
-        <CountTags type={Category.Post} tags={tags.post} />
+        <CountTags category={Category.Post} tags={tags.post} />
       </div>
       <div className="space-y-8">
         <Typo text="Note Tags" />
-        <CountTags type={Category.Note} tags={tags.note} />
+        <CountTags category={Category.Note} tags={tags.note} />
       </div>
     </div>
   )

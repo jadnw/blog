@@ -5,13 +5,16 @@ export interface PostsByTagProps {
   params: {
     tag: string
   }
+  searchParams: {
+    category: Category
+  }
 }
 
-const PostsByTag = async ({ params: { tag } }: PostsByTagProps) => {
+const PostsByTag = async ({ params: { tag }, searchParams: { category } }: PostsByTagProps) => {
   return (
     <>
       {/* @ts-expect-error Server Component */}
-      <PostListLayout type={Category.Post} title={`Post Tag: ${tag}`} tag={tag} />
+      <PostListLayout category={category} title={`${category} Tag: ${tag}`} tag={tag} />
     </>
   )
 }

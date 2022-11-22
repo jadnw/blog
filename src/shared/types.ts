@@ -14,7 +14,7 @@ export interface IPaginate<T> {
 }
 
 export interface IBlogPostFrontMatter {
-  type: Category.Post
+  category: Category.Post
   id: string
   slug: string
   title: string
@@ -27,7 +27,7 @@ export interface IBlogPostFrontMatter {
 }
 
 export interface INotePostFrontMatter {
-  type: Category.Note
+  category: Category.Note
   id: string
   slug: string
   title: string

@@ -5,7 +5,7 @@ const Blog = async () => {
   return (
     <>
       {/* @ts-expect-error Server Component */}
-      <PostListLayout type={Category.Post} />
+      <PostListLayout category={Category.Post} />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import mdx from 'lib/mdx'
 import { Category } from 'shared/enums'
-import MDXRemoteRenderer from 'app/MDXRemoteRenderer'
+import SinglePostLayout from 'app/SinglePostLayout'
 
 export interface PostProps {
   params: {
@@ -11,10 +11,8 @@ export interface PostProps {
 const Post = async ({ params: { slug } }: PostProps) => {
   const post = await mdx.getSingleMdxBySlug(Category.Post, slug)
   return (
-    <div>
-      {JSON.stringify(post.frontmatter)}
-      {JSON.stringify(post.toc)}
-      <MDXRemoteRenderer source={post.source} />
+    <div className="mx-auto w-wrapper">
+      <SinglePostLayout post={post} />
     </div>
   )
 }

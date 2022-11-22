@@ -11,7 +11,7 @@ const PaginateBlog = async ({ params: { page } }: PaginateBlogProps) => {
   return (
     <>
       {/* @ts-expect-error Server Component */}
-      <PostListLayout type={Category.Post} page={Number(page)} />
+      <PostListLayout category={Category.Post} page={Number(page)} />
     </>
   )
 }

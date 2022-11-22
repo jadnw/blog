@@ -6,15 +6,17 @@ import mdx from 'lib/mdx'
 import { Category } from 'shared/enums'
 
 export interface PostListLayoutProps {
-  type: Category
+  category: Category
   title?: string
   tag?: string
   page?: number
 }
 
-const PostListLayout = async ({ type, title = 'Blog', tag, page = 1 }: PostListLayoutProps) => {
+const PostListLayout = async ({ category, title = 'Blog', tag, page = 1 }: PostListLayoutProps) => {
   const fetchData = async () =>
-    tag ? mdx.paginateFrontmattersByTag(type, tag, page) : mdx.paginateFrontmatters(type, page)
+    tag
+      ? mdx.paginateFrontmattersByTag(category, tag, page)
+      : mdx.paginateFrontmatters(category, page)
   const data = await fetchData()
 
   return (
@@ -22,7 +24,7 @@ const PostListLayout = async ({ type, title = 'Blog', tag, page = 1 }: PostListL
       <Typo text={title} />
       <PostList frontmatters={data.data} />
       <Pagination
-        path={tag ? `/tags/${tag}` : type === Category.Post ? '/posts' : '/notes'}
+        path={tag ? `/tags/${tag}` : category === Category.Post ? '/posts' : '/notes'}
         metadata={data.metadata}
       />
     </div>
