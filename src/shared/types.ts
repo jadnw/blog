@@ -1,4 +1,5 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { Category } from './enums'
 
 export interface IPaginate<T> {
   metadata: {
@@ -12,17 +13,32 @@ export interface IPaginate<T> {
   data: T[]
 }
 
-export interface IFrontMatter {
+export interface IBlogPostFrontMatter {
+  type: Category.Post
   id: string
   slug: string
   title: string
-  cover?: string
+  cover: string
   tags: string[]
   excerpt: string
   readingTime: string
   published: boolean
   date: string
 }
+
+export interface INotePostFrontMatter {
+  type: Category.Note
+  id: string
+  slug: string
+  title: string
+  tags: string[]
+  excerpt: string
+  readingTime: string
+  published: boolean
+  date: string
+}
+
+export type IFrontMatter = IBlogPostFrontMatter | INotePostFrontMatter
 
 export interface IToc {
   id: string

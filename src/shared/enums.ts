@@ -1,4 +1,4 @@
-export enum PostType {
-  Post = 'post',
-  Note = 'note',
+export enum Category {
+  Post = 'Post',
+  Note = 'Note',
 }

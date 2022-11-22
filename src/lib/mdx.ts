@@ -14,13 +14,13 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 import config from 'lib/config'
-import { PostType } from 'shared/enums'
+import { Category } from 'shared/enums'
 import { IFrontMatter, IPaginate, IPost } from 'shared/types'
 
 const ROOT = process.cwd()
 const SOURCES = {
-  [PostType.Post]: path.join(ROOT, 'contents', 'posts'),
-  [PostType.Note]: path.join(ROOT, 'contents', 'notes'),
+  [Category.Post]: path.join(ROOT, 'contents', 'posts'),
+  [Category.Note]: path.join(ROOT, 'contents', 'notes'),
 }
 
 const getMdxFiles = (directory: string): string[] =>
@@ -39,7 +39,7 @@ const getSlug = (path: string): string => {
   return slug
 }
 
-const getFrontmatters = (type: PostType): IFrontMatter[] => {
+const getFrontmatters = (type: Category): IFrontMatter[] => {
   const directory = SOURCES[type]
   const paths = getMdxFiles(directory)
 
@@ -48,6 +48,7 @@ const getFrontmatters = (type: PostType): IFrontMatter[] => {
       const source = fs.readFileSync(p, 'utf8')
       const { data, content } = matter(source)
       return {
+        type,
         id: data.id,
         slug: getSlug(p),
         title: data.title,
@@ -64,7 +65,7 @@ const getFrontmatters = (type: PostType): IFrontMatter[] => {
   return frontmatters
 }
 
-const paginateFrontmatters = (type: PostType, page = 1): IPaginate<IFrontMatter> => {
+const paginateFrontmatters = (type: Category, page = 1): IPaginate<IFrontMatter> => {
   const frontmatters = getFrontmatters(type)
   const pageSize = config.pageSize
   const count = frontmatters.length
@@ -76,14 +77,14 @@ const paginateFrontmatters = (type: PostType, page = 1): IPaginate<IFrontMatter>
       pageSize,
       count,
       pagesCount,
-      hasNext: page >= 1 && page <= pagesCount,
-      hasPrev: page > 1 && page < pagesCount,
+      hasNext: page >= 1 && page < pagesCount,
+      hasPrev: page > 1 && page <= pagesCount,
     },
-    data: frontmatters.slice(0, 2),
+    data: frontmatters.slice(pageSize * (page - 1), pageSize * page),
   }
 }
 
-const paginateFrontmattersByTag = (type: PostType, tag: string, page = 1) => {
+const paginateFrontmattersByTag = (type: Category, tag: string, page = 1) => {
   const frontmatters = getFrontmatters(type).filter((fm) => fm.tags.includes(tag))
   const pageSize = config.pageSize
   const count = frontmatters.length
@@ -95,19 +96,19 @@ const paginateFrontmattersByTag = (type: PostType, tag: string, page = 1) => {
       pageSize,
       count,
       pagesCount,
-      hasNext: page >= 1 && page <= pagesCount,
-      hasPrev: page > 1 && page < pagesCount,
+      hasNext: page >= 1 && page < pagesCount,
+      hasPrev: page > 1 && page <= pagesCount,
     },
-    data: frontmatters.slice(0, 2),
+    data: frontmatters.slice(pageSize * (page - 1), pageSize * page),
   }
 }
 
-export type CountTags = { [prop: string]: number }
+export type CountTags = { name: string; count: number }[]
 
-const getCountTagsByPostType = (type: PostType): CountTags => {
+const getCountTagsByCategory = (type: Category): CountTags => {
   const frontmatters = getFrontmatters(type)
 
-  return frontmatters
+  const tags = frontmatters
     .reduce((accTags: string[], fm) => [...accTags, ...fm.tags], [])
     .reduce((acc: { [prop: string]: number }, t) => {
       if (!acc[t]) {
@@ -118,16 +119,18 @@ const getCountTagsByPostType = (type: PostType): CountTags => {
       ++acc[t]
       return acc
     }, {})
+
+  return Object.keys(tags).map((name) => ({ name, count: tags[name] }))
 }
 
 const getCountTags = (): { post: CountTags; note: CountTags } => {
   return {
-    post: getCountTagsByPostType(PostType.Post),
-    note: getCountTagsByPostType(PostType.Note),
+    post: getCountTagsByCategory(Category.Post),
+    note: getCountTagsByCategory(Category.Note),
   }
 }
 
-const getSingleMdxBySlug = async (type: PostType, slug: string): Promise<IPost> => {
+const getSingleMdxBySlug = async (type: Category, slug: string): Promise<IPost> => {
   const directory = SOURCES[type]
   const filepath = path.join(directory, `${slug}.mdx`)
   const source = fs.readFileSync(filepath, 'utf8')
@@ -149,6 +152,7 @@ const getSingleMdxBySlug = async (type: PostType, slug: string): Promise<IPost> 
 
   return {
     frontmatter: {
+      type,
       id: frontmatter.id,
       slug,
       title: frontmatter.title,

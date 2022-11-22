@@ -1,5 +1,8 @@
 import { Noto_Sans_Display } from '@next/font/google'
 import localFont from '@next/font/local'
+
+import Header from './Header'
+import Footer from './Footer'
 import 'styles/globals.css'
 
 const notoSansDisplay = Noto_Sans_Display({
@@ -32,7 +35,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main className="min-h-[calc(100vh_-_64px)]">{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }

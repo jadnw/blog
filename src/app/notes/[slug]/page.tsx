@@ -1,5 +1,5 @@
 import mdx from 'lib/mdx'
-import { PostType } from 'shared/enums'
+import { Category } from 'shared/enums'
 import MDXRemoteRenderer from 'app/MDXRemoteRenderer'
 
 export interface NoteProps {
@@ -9,7 +9,7 @@ export interface NoteProps {
 }
 
 const Note = async ({ params: { slug } }: NoteProps) => {
-  const post = await mdx.getSingleMdxBySlug(PostType.Note, slug)
+  const post = await mdx.getSingleMdxBySlug(Category.Note, slug)
   return (
     <div>
       {JSON.stringify(post.frontmatter)}

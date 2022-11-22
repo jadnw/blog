@@ -16,7 +16,7 @@ export default {
     lang: 'en',
     locale: 'en-US',
     url: 'https://jadnw.vercel.app',
-    repository: 'https://github.com/jadnw/blog',
+    repository: 'https://github.com/jadnw/posts',
     logo: '/favicon.ico',
     email: 'jadenwu137@protonmail.com',
     portfolio: 'https://jadnw.github.io',
