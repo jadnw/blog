@@ -10,7 +10,7 @@ const remarkToc = (options: any) => {
       const text = toString(node)
       options.exportRef.push({
         value: text,
-        id: slugify(text),
+        id: slugify(text, { lower: true, remove: /[*+~.()'"!:@]/g }),
         depth: node.depth,
       })
     })
