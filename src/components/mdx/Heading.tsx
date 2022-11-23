@@ -9,7 +9,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
   switch (as) {
     case 'h1':
       return (
-        <h1 id={id} className="relative mt-6 text-4xl text-teal-600 dark:text-teal-400">
+        <h1 id={id} className="relative mt-8 text-4xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
             className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
@@ -21,7 +21,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
       )
     case 'h2':
       return (
-        <h2 id={id} className="relative mt-4 text-3xl text-teal-600 dark:text-teal-400">
+        <h2 id={id} className="relative mt-6 text-3xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
             className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
@@ -33,7 +33,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
       )
     case 'h3':
       return (
-        <h3 id={id} className="relative mt-3 text-2xl text-teal-600 dark:text-teal-400">
+        <h3 id={id} className="relative mt-4 text-2xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
             className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
@@ -45,7 +45,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
       )
     case 'h4':
       return (
-        <h4 id={id} className="relative mt-2 text-xl text-teal-600 dark:text-teal-400">
+        <h4 id={id} className="relative mt-4 text-xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
             className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
@@ -57,7 +57,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
       )
     case 'h5':
       return (
-        <h5 id={id} className="relative mt-2 text-lg text-teal-600 dark:text-teal-400">
+        <h5 id={id} className="relative mt-4 text-lg text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
             className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
@@ -69,7 +69,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
       )
     case 'h6':
       return (
-        <h6 id={id} className="relative mt-2 text-base text-teal-600 dark:text-teal-400">
+        <h6 id={id} className="relative mt-4 text-base text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
             className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
