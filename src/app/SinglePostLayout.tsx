@@ -8,6 +8,7 @@ import Profile from 'components/Profile'
 import TOC from 'components/TOC'
 import MDXRemoteRenderer from './MDXRemoteRenderer'
 import Github from 'components/svgs/Github'
+import Comments from 'app/Comments'
 import 'devicon/devicon.min.css'
 
 export interface SinglePostLayoutProps {
@@ -42,6 +43,7 @@ const SinglePostLayout = ({ post: { frontmatter, toc, source } }: SinglePostLayo
     <div className="mx-auto w-post">
       <TOC toc={toc} />
       <MDXRemoteRenderer source={source} />
+      <Comments />
     </div>
   </article>
 )
