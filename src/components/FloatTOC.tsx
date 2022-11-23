@@ -27,7 +27,11 @@ const FloatTOC = ({ toc, visible }: FloatTOCProps) => {
               className="before:mr-2 before:content-['•']"
               style={{ marginLeft: `${(depth - 2) * 1}rem` }}
             >
-              <a href={`#${id}`} className="duration-200 hover:underline">
+              <a
+                href={`#${id}`}
+                className="duration-200 hover:underline"
+                onClick={() => setDropdown(false)}
+              >
                 {value}
               </a>
             </li>
