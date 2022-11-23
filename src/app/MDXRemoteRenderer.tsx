@@ -14,6 +14,7 @@ import UnorderedList from 'components/mdx/UnorderedList'
 import OrderedList from 'components/mdx/OrderedList'
 import CodeSandbox from 'components/mdx/CodeSandbox'
 import Youtube from 'components/mdx/Youtube'
+import Li from 'components/mdx/Li'
 
 export interface MDXRemoteRendererProps {
   source: MDXRemoteSerializeResult
@@ -36,6 +37,7 @@ const components = {
     props.className?.includes('rehype-code-title') ? <CodeTitle {...props} /> : <div {...props} />,
   ul: UnorderedList,
   ol: OrderedList,
+  li: Li,
   CodeSandbox,
   Youtube,
 }
