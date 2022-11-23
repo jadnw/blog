@@ -18,6 +18,30 @@
   }
 }
 
+:root {
+  --aesthetic-accent: #8ccf7e;
+  --aesthetic-red: #f77d82;
+  --aesthetic-green: #8ccf7e;
+  --aesthetic-blue: #69a6f7;
+  --aesthetic-yellow: #d8ce91;
+  --aesthetic-orange: #e3a66d;
+  --aesthetic-cyan: #70d8ca;
+  --aesthetic-teal: #54ba9f;
+  --aesthetic-magenta: #d076b9;
+  --aesthetic-purple: #ad8bee;
+  --aesthetic-comment: #547182;
+  --aesthetic-bg0: #192126;
+  --aesthetic-bg1: #1e282e;
+  --aesthetic-bg2: #243138;
+  --aesthetic-bg3: #2b3a43;
+  --aesthetic-bg4: #32434d;
+  --aesthetic-fg0: #cad5dc;
+  --aesthetic-fg1: #a0b4c1;
+  --aesthetic-fg2: #8ba4b3;
+  --aesthetic-fg3: #628397;
+  --aesthetic-sel: #475e6d;
+}
+
 html {
   scroll-behavior: smooth;
 }

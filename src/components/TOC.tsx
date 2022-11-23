@@ -7,7 +7,7 @@ interface TOCProps {
 const TOC = ({ toc }: TOCProps) => (
   <div
     id="toc"
-    className="my-4 flex flex-col overflow-hidden rounded border border-ink-200 p-4 dark:border-ink-700"
+    className="my-12 flex flex-col overflow-hidden rounded border border-ink-400 p-4 dark:border-ink-700"
   >
     <div className="py-1 font-bold uppercase">Table of Contents</div>
     <div className={`leading-loose`}>

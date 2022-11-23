@@ -5,7 +5,7 @@ import Twitter from 'components/svgs/Twitter'
 import Discord from 'components/svgs/Discord'
 
 const Footer = () => (
-  <footer className="border-t border-ink-200 py-4 dark:border-ink-800">
+  <footer className="border-t border-ink-300 py-4 dark:border-ink-800">
     <div className="mx-auto flex w-wrapper items-center justify-between">
       <p>From {config.metadata.author} with 🔥 &bull; &copy; 2022</p>
       <ul className="flex items-center space-x-1">

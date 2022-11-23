@@ -1,11 +1,12 @@
 import Image from 'next/image'
+import dayjs from 'dayjs'
 
 import { Category } from 'shared/enums'
 import { IPost } from 'shared/types'
 import Tags from 'components/Tags'
 import Profile from 'components/Profile'
 import TOC from 'components/TOC'
-import dayjs from 'dayjs'
+import MDXRemoteRenderer from './MDXRemoteRenderer'
 
 export interface SinglePostLayoutProps {
   post: IPost
@@ -32,8 +33,9 @@ const SinglePostLayout = ({ post: { frontmatter, toc, source } }: SinglePostLayo
       </div>
       <Tags category={frontmatter.category} tags={frontmatter.tags} />
     </div>
-    <div className="mx-auto w-post">
+    <div className="mx-auto w-post text-lg">
       <TOC toc={toc} />
+      <MDXRemoteRenderer source={source} />
     </div>
   </article>
 )
