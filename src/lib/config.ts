@@ -27,8 +27,8 @@ export default {
   },
   pageSize: process.env.PAGE_SIZE ? Number(process.env.PAGE_SIZE) : 2,
   sendinblue: {
-    endpoint: process.env.NEXT_PUBLIC_SENDINBLUE_ENDPOINT,
-    apiKey: process.env.NEXT_PUBLIC_SENDINBLUE_API_KEY,
+    endpoint: process.env.NEXT_PUBLIC_SENDINBLUE_ENDPOINT ?? '',
+    apiKey: process.env.NEXT_PUBLIC_SENDINBLUE_API_KEY ?? '',
   },
   comments: {
     url: 'https://giscus.app/client.js',

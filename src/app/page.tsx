@@ -1,4 +1,5 @@
 import config from 'lib/config'
+import Subscribe from './Subscribe'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
           Say hi to me!
         </a>
       </section>
+      <Subscribe />
     </div>
   )
 }
