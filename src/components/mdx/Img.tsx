@@ -14,7 +14,9 @@ const Img = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
         />
       </span>
     ) : null}
-    <span className="mt-1 block text-center text-base text-ink-400">{props.alt}</span>
+    <span className="mt-1 block text-center text-base text-ink-500 dark:text-ink-400">
+      {props.alt}
+    </span>
   </>
 )
 

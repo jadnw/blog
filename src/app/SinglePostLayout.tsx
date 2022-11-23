@@ -39,7 +39,7 @@ const SinglePostLayout = ({ post: { frontmatter, toc, source } }: SinglePostLayo
       </div>
       <Tags category={frontmatter.category} tags={frontmatter.tags} />
     </div>
-    <div className="mx-auto w-post text-lg">
+    <div className="mx-auto w-post">
       <TOC toc={toc} />
       <MDXRemoteRenderer source={source} />
     </div>

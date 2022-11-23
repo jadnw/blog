@@ -12,7 +12,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
         <h1 id={id} className="relative mt-8 text-4xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
-            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
+            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-40 duration-200 hover:opacity-100 dark:opacity-30 dark:hover:opacity-100"
           >
             <WebLink className="h-4 w-4" />
           </a>
@@ -24,7 +24,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
         <h2 id={id} className="relative mt-6 text-3xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
-            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
+            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-40 duration-200 hover:opacity-100 dark:opacity-30 dark:hover:opacity-100"
           >
             <WebLink className="h-4 w-4" />
           </a>
@@ -36,7 +36,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
         <h3 id={id} className="relative mt-4 text-2xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
-            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
+            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-40 duration-200 hover:opacity-100 dark:opacity-30 dark:hover:opacity-100"
           >
             <WebLink className="h-4 w-4" />
           </a>
@@ -48,7 +48,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
         <h4 id={id} className="relative mt-4 text-xl text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
-            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
+            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-40 duration-200 hover:opacity-100 dark:opacity-30 dark:hover:opacity-100"
           >
             <WebLink className="h-4 w-4" />
           </a>
@@ -60,7 +60,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
         <h5 id={id} className="relative mt-4 text-lg text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
-            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
+            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-40 duration-200 hover:opacity-100 dark:opacity-30 dark:hover:opacity-100"
           >
             <WebLink className="h-4 w-4" />
           </a>
@@ -72,7 +72,7 @@ const Heading = ({ as, id, children }: HeadingProps) => {
         <h6 id={id} className="relative mt-4 text-base text-teal-600 dark:text-teal-400">
           <a
             href={`#${id}`}
-            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-30 duration-200 hover:opacity-100"
+            className="absolute top-1/2 -left-8 block -translate-y-1/2 p-1 opacity-40 duration-200 hover:opacity-100 dark:opacity-30 dark:hover:opacity-100"
           >
             <WebLink className="h-4 w-4" />
           </a>
