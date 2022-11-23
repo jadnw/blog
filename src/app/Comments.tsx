@@ -10,7 +10,11 @@ const Comments = () => {
 
   const loadComments = useCallback(() => {
     const commentsElem = document.getElementById(config.comments.id)
-    if (commentsElem) commentsElem.innerHTML = ''
+
+    if (commentsElem) {
+      commentsElem.innerHTML = ''
+    }
+
     const script = document.createElement('script')
     script.src = config.comments.url
     script.setAttribute('data-repo', config.comments.repo)
@@ -40,7 +44,7 @@ const Comments = () => {
   return (
     <div className="py-24 text-center text-ink-600 dark:text-ink-300">
       {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-      <div className="giscus-frame relative" id={config.comments.id} />
+      <div id={config.comments.id} className="giscus-frame relative" />
     </div>
   )
 }

@@ -43,7 +43,7 @@ const SinglePostLayout = ({ post: { frontmatter, toc, source } }: SinglePostLayo
     <div className="mx-auto w-post">
       <TOC toc={toc} />
       <MDXRemoteRenderer source={source} />
-      <div className="mt-8 border-t border-ink-300 pt-1 text-center text-sm text-ink-500 dark:border-ink-700 dark:text-ink-600">
+      <div className="mt-8 border-t border-ink-300 pt-2 text-center text-sm text-ink-500 dark:border-ink-700 dark:text-ink-600">
         This is the end of the article
       </div>
       <Comments />
