@@ -16,8 +16,8 @@ const FloatTOC = ({ toc, visible }: FloatTOCProps) => {
       } shadow-sm`}
     >
       <div
-        className={`border-b border-ink-700 px-4 leading-loose ${
-          dropdown ? 'h-auto py-4' : 'h-0 overflow-hidden pb-0'
+        className={`px-4 leading-loose ${
+          dropdown ? 'h-auto border-b border-ink-700 py-4' : 'h-0 overflow-hidden pb-0'
         }`}
       >
         <ul>
