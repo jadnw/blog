@@ -11,13 +11,15 @@ const FloatTOC = ({ toc, visible }: FloatTOCProps) => {
 
   return (
     <div
-      className={`fixed bottom-2 z-100 flex w-post flex-col items-stretch rounded border border-ink-600 bg-ink-800 text-base duration-200 ${
+      className={`fixed bottom-2 z-100 flex w-post flex-col items-stretch rounded border border-ink-400 bg-ink-100 shadow-lg duration-200 dark:border-ink-600 dark:bg-ink-800 ${
         visible ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
       } shadow-sm`}
     >
       <div
         className={`px-4 leading-loose ${
-          dropdown ? 'h-auto border-b border-ink-700 py-4' : 'h-0 overflow-hidden pb-0'
+          dropdown
+            ? 'h-auto border-b border-ink-300 py-4 dark:border-ink-700'
+            : 'h-0 overflow-hidden pb-0'
         }`}
       >
         <ul>
