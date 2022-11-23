@@ -7,8 +7,8 @@ import Tags from 'components/Tags'
 import Profile from 'components/Profile'
 import TOC from 'components/TOC'
 import MDXRemoteRenderer from './MDXRemoteRenderer'
-import 'devicon/devicon.min.css'
 import Github from 'components/svgs/Github'
+import 'devicon/devicon.min.css'
 
 export interface SinglePostLayoutProps {
   post: IPost
