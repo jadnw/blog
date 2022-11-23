@@ -1,9 +1,6 @@
 import { visit } from 'unist-util-visit'
-import GithubSlugger from 'github-slugger'
 import { toString } from 'mdast-util-to-string'
-
-const slugger = new GithubSlugger()
-slugger.reset()
+import slugify from 'slugify'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const remarkToc = (options: any) => {
@@ -13,7 +10,7 @@ const remarkToc = (options: any) => {
       const text = toString(node)
       options.exportRef.push({
         value: text,
-        id: slugger.slug(text),
+        id: slugify(text),
         depth: node.depth,
       })
     })

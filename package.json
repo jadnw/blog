@@ -21,7 +21,6 @@
     "devicon": "^2.15.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
-    "github-slugger": "^2.0.0",
     "globby": "^13.1.2",
     "gray-matter": "^4.0.3",
     "mdast-util-to-string": "^3.1.0",
@@ -35,6 +34,7 @@
     "rehype-prism-plus": "^1.5.0",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
+    "slugify": "^1.6.5",
     "typescript": "4.9.3",
     "unist-util-visit": "^4.1.1"
   },
