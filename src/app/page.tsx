@@ -4,7 +4,10 @@ const Home = () => {
   return (
     <div className="mx-auto w-wrapper">
       <section className="flex min-h-[calc(100vh_-_64px)] flex-col items-center space-y-6 pt-48">
-        <h1 className="text-6xl">🎉 Welcome to my blog! I&apos;m Jaden. 🥳</h1>
+        <h1 className="text-6xl text-ink-500 dark:text-ink-400">
+          🎉 Welcome to my blog!{' '}
+          <span className="text-ink-700 dark:text-ink-200">I&apos;m Jaden. 🥳</span>
+        </h1>
         <p className="text-center leading-relaxed">
           I am a self-taught Front End developer from Ho Chi Minh, Vietnam.
           <br />I love working on side projects and blogging about everything.
