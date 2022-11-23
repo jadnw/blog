@@ -9,7 +9,7 @@ const TOC = ({ toc }: TOCProps) => (
     id="toc"
     className="my-12 flex flex-col overflow-hidden rounded border border-ink-400 p-4 dark:border-ink-700"
   >
-    <div className="py-1 font-bold uppercase">Table of Contents</div>
+    <div className="py-1 text-xl font-bold uppercase">Table of Contents</div>
     <div className={`leading-loose`}>
       <ul>
         {toc.map(({ value, id, depth }) => (

@@ -7,6 +7,8 @@ import Tags from 'components/Tags'
 import Profile from 'components/Profile'
 import TOC from 'components/TOC'
 import MDXRemoteRenderer from './MDXRemoteRenderer'
+import 'devicon/devicon.min.css'
+import Github from 'components/svgs/Github'
 
 export interface SinglePostLayoutProps {
   post: IPost
@@ -27,8 +29,12 @@ const SinglePostLayout = ({ post: { frontmatter, toc, source } }: SinglePostLayo
         <span>&bull;</span>
         <span>{dayjs(frontmatter.date).format('MMMM DD, YYYY')}</span>
         <span>&bull;</span>
-        <a href={frontmatter.title} className="duration-200 hover:underline">
-          Edit on Github
+        <a
+          href={frontmatter.title}
+          className="flex items-center space-x-2 duration-200 hover:underline"
+        >
+          <Github className="h-4 w-4" />
+          <span>Edit on Github</span>
         </a>
       </div>
       <Tags category={frontmatter.category} tags={frontmatter.tags} />

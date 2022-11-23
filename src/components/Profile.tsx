@@ -7,7 +7,7 @@ const Profile = () => (
     href={config.metadata.portfolio}
     target="_blank"
     rel="noreferrer"
-    className="flex items-center space-x-2"
+    className="flex items-center space-x-2 duration-200 hover:underline"
   >
     <div className="relative h-7 w-7 overflow-hidden rounded-full">
       <Image src="/me.png" alt={config.metadata.author} fill sizes="28px" object-fit="cover" />

@@ -3,6 +3,7 @@ import GithubSlugger from 'github-slugger'
 import { toString } from 'mdast-util-to-string'
 
 const slugger = new GithubSlugger()
+slugger.reset()
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const remarkToc = (options: any) => {
