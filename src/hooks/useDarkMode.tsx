@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 
 export const useDarkMode = () => {
+  const [mounted, setMounted] = useState(false)
   const [enabled, setEnabled] = useState(
     typeof localStorage !== 'undefined'
-      ? localStorage.theme && localStorage.theme === 'dark'
+      ? localStorage.getItem('theme') === 'dark'
         ? true
         : false
       : false
@@ -12,15 +13,15 @@ export const useDarkMode = () => {
   const toggle = () => setEnabled(!enabled)
 
   useEffect(() => {
-    if (
-      enabled ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
+    setMounted(true)
+    if (enabled) {
+      localStorage.setItem('theme', 'dark')
       document.documentElement.classList.add('dark')
     } else {
+      localStorage.setItem('theme', 'light')
       document.documentElement.classList.remove('dark')
     }
   }, [enabled])
 
-  return [enabled, toggle]
+  return [mounted ? enabled : false, toggle]
 }
