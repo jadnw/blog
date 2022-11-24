@@ -3,19 +3,19 @@ import { Category } from 'shared/enums'
 
 export const revalidate = 3600
 
-export interface PaginatePostsProps {
+export interface PaginateNotesProps {
   params: {
     page: string
   }
 }
 
-const PaginatePosts = async ({ params: { page } }: PaginatePostsProps) => {
+const PaginateNotes = async ({ params: { page } }: PaginateNotesProps) => {
   return (
     <>
       {/* @ts-expect-error Server Component */}
-      <PostListLayout category={Category.Post} page={Number(page)} />
+      <PostListLayout category={Category.Note} page={Number(page)} />
     </>
   )
 }
 
-export default PaginatePosts
+export default PaginateNotes

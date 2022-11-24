@@ -1,6 +1,8 @@
 import PostListLayout from 'app/PostListLayout'
 import { Category } from 'shared/enums'
 
+export const revalidate = 3600
+
 const Notes = async () => {
   return (
     <>

@@ -3,6 +3,8 @@ import CountTags from 'components/CountTags'
 import mdx from 'lib/mdx'
 import { Category } from 'shared/enums'
 
+export const revalidate = 3600
+
 const TagList = async () => {
   const tags = mdx.getCountTags()
 
